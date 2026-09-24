@@ -1,0 +1,14 @@
+# Secrets: never commit any env file or editor backup
+.env
+.env*
+!.env.example
+*.save
+*.swp
+
+# Python
+.venv/
+__pycache__/
+
+# Generated results and private chats
+outputs/
+sample_data/private/

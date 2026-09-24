@@ -1,0 +1,40 @@
+03/03/26, 9:02 am - Messages and calls are end-to-end encrypted. No one outside of this chat can read or listen to them.
+03/03/26, 9:05 am - Rakesh Sharma created group "Orders - Sharma Traders"
+03/03/26, 9:14 am - Rakesh Sharma: Mehta ji ka order aaya hai, 40 cartons. PO attached
+03/03/26, 9:14 am - Rakesh Sharma: PO_Mehta_0303.pdf (file attached)
+03/03/26, 9:40 am - Anjali Verma: Received sir. Stock check karke batati hoon
+03/03/26, 11:25 am - Anjali Verma: Godown mein 32 cartons hai. Suresh please confirm
+03/03/26, 2:10 pm - Rakesh Sharma: Suresh any update?
+03/03/26, 4:48 pm - Suresh Yadav: Sir 34 hai, 2 cartons kal wale return mein aaye the
+03/03/26, 4:55 pm - Anjali Verma: Ok. Mehta ji ko partial dispatch ka bolna padega
+03/03/26, 5:30 pm - Rakesh Sharma: Theek hai. Invoice bana do 34 ka
+03/03/26, 6:45 pm - Anjali Verma: Invoice Tally mein entry kar diya. Rakesh sir approve kar dijiye
+03/03/26, 6:46 pm - Anjali Verma: INV_2231.pdf (file attached)
+04/03/26, 10:20 am - Anjali Verma: Sir invoice approval pending hai
+04/03/26, 12:05 pm - Rakesh Sharma: Approved. Dispatch karo
+04/03/26, 12:30 pm - Anjali Verma: Suresh dispatch ready karo, transporter ko call kiya? Number 98765 43210
+04/03/26, 3:15 pm - Suresh Yadav: Transporter kal subah aayega
+05/03/26, 11:40 am - Suresh Yadav: Dispatch ho gaya. LR copy attached
+05/03/26, 11:41 am - Suresh Yadav: <Media omitted>
+05/03/26, 12:10 pm - Anjali Verma: LR number Tally mein daal diya. Mehta ji ko email kar rahi hoon accounts@mehtaretail.in
+06/03/26, 10:02 am - Rakesh Sharma: Gupta Stores ka order - 25 cartons, same rate
+06/03/26, 10:03 am - Rakesh Sharma: PO_Gupta_0603.pdf (file attached)
+06/03/26, 10:30 am - Anjali Verma: Stock check kar rahi hoon
+06/03/26, 1:15 pm - Anjali Verma: Suresh stock kitna hai? jaldi batao
+06/03/26, 4:20 pm - Suresh Yadav: 18 cartons madam
+06/03/26, 4:35 pm - Anjali Verma: Sir 18 hi hai. Partial dispatch?
+06/03/26, 7:50 pm - Rakesh Sharma: Haan 18 bhej do, baaki next week
+07/03/26, 10:15 am - Anjali Verma: Invoice INV_2232 ready. Approval please
+07/03/26, 10:16 am - Anjali Verma: INV_2232.pdf (file attached)
+07/03/26, 1:30 pm - Anjali Verma: Gentle reminder sir, invoice approval
+07/03/26, 5:10 pm - Rakesh Sharma: Rate galat hai, 420 tha 410 nahi. Correct karo
+07/03/26, 5:45 pm - Anjali Verma: Sorry sir, corrected. Revised invoice attached
+07/03/26, 5:46 pm - Anjali Verma: INV_2232_rev.pdf (file attached)
+07/03/26, 6:30 pm - Rakesh Sharma: Approved
+09/03/26, 11:00 am - Suresh Yadav: Gupta ji ka dispatch ho gaya. LR attached
+09/03/26, 11:01 am - Suresh Yadav: <Media omitted>
+09/03/26, 11:30 am - Anjali Verma: Tally update kar diya
+10/03/26, 9:30 am - Rakesh Sharma: Mehta ji ka payment aaya kya? kab tak aayega
+10/03/26, 10:45 am - Anjali Verma: Sir abhi tak nahi aaya. Unko reminder bhejti hoon
+12/03/26, 3:20 pm - Rakesh Sharma: Kya hua Mehta payment ka?
+12/03/26, 4:05 pm - Anjali Verma: Sir unhone bola Monday tak
