@@ -10,6 +10,7 @@ lost, and what to automate, with savings proven by replaying the real history.
 - [x] Step 4: Recommender + devil's advocate agents (risk-adjusted ranking, rupee estimates)
 - [x] Step 5: Replay engine: re-runs the real history with the automations applied
       (event-log agent traces every order; working-hours maths; chasers linked to orders)
+- [x] Free multi-provider fallback: Gemini -> Groq -> OpenRouter, with patient retries
 - [ ] Step 6: Streamlit app
 
 ## Run it
