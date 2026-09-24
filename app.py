@@ -140,7 +140,7 @@ p, li { line-height: 1.6; }
 [data-testid="stSidebar"] strong { color: var(--marigold); }
 
 /* Marigold underline on the key word of each page title */
-.px-title mark { background: none; color: inherit; box-shadow: inset 0 -0.28em 0 var(--marigold); padding: 0 .05em; }
+.px-title mark { background: none; color: inherit; white-space: nowrap; text-decoration: underline; text-decoration-color: var(--marigold); text-decoration-thickness: .16em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
 
 /* A thin marigold band across the top of the hero, like a garland on the ledger */
 .px-ledger.hero { border-top: 4px solid var(--marigold); }
