@@ -6,7 +6,7 @@ lost, and what to automate, with savings proven by replaying the real history.
 ## Status
 - [x] Step 1: WhatsApp parser with privacy redaction and process signals
 - [x] Step 2: Mapper agent reconstructs the process (Gemini, with retries and model fallback)
-- [ ] Step 3: Analyst agent scores every step
+- [x] Step 3: Analyst agent scores every step (waits measured in working hours from real timestamps)
 - [ ] Step 4: Recommender + devil's advocate agents
 - [ ] Step 5: Replay engine (counterfactual savings on real chat history)
 - [ ] Step 6: Streamlit app

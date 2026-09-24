@@ -1,4 +1,8 @@
-"""Mapper agent: turns a ChatDigest into a structured process map."""
+"""Mapper agent: turns a ChatDigest into a structured process map.
+
+The model cites message numbers as evidence for every step. Frequency and
+wait times are then measured in code from real timestamps (see measure.py),
+so the only guessed number is hands-on minutes per step."""
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -14,11 +18,13 @@ class MappedStep(BaseModel):
     system: str                               # e.g. "WhatsApp", "Tally", "Phone"
     input: str
     output: str
-    frequency_per_week: float
-    minutes_per_run: float
-    wait_before_hours: float                  # typical wait before this step starts
+    minutes_per_run: float                    # hands-on effort (estimated)
+    starts_on_external_event: bool = False    # e.g. a customer order arrives
+    message_ids: list[int] = Field(default_factory=list)
+    # Filled in by measure.py, not by the model
+    frequency_per_week: float = 0.0
+    wait_before_hours: float = 0.0            # working hours waited before this step
     assumed_fields: list[str] = Field(default_factory=list)
-    evidence: list[str] = Field(default_factory=list)   # short message references
 
 
 class PainPoint(BaseModel):
@@ -27,7 +33,7 @@ class PainPoint(BaseModel):
     ]
     description: str
     step_ids: list[str]
-    evidence: list[str]
+    message_ids: list[int] = Field(default_factory=list)
 
 
 class ProcessMap(BaseModel):
@@ -42,10 +48,11 @@ class ProcessMap(BaseModel):
 SYSTEM = """You are an expert operations analyst for small Indian businesses.
 You read redacted WhatsApp group chats (often in Hinglish) and reconstruct the
 real business process people follow. Be precise and grounded: every step and
-pain point must be supported by messages in the chat. Refer to customers
-generically ("Customer A", "Customer B"), never by name. Reply with JSON only."""
+pain point must be supported by numbered messages in the chat. Refer to
+customers generically ("Customer A", "Customer B"), never by name.
+Reply with JSON only."""
 
-INSTRUCTIONS = """Reconstruct the process shown in this chat.
+INSTRUCTIONS = """Reconstruct the process shown in this chat. Messages are numbered #0, #1, ...
 
 Return a JSON object with exactly these keys:
 - "process_name": short name, e.g. "Order to payment"
@@ -55,44 +62,38 @@ Return a JSON object with exactly these keys:
     "id" ("S1", "S2"...), "name", "actor" (e.g. "Person 2 (office staff)"),
     "system" (tool used: WhatsApp, Tally, phone, email, godown visit...),
     "input", "output",
-    "frequency_per_week" (estimate from how often it happens in the chat period),
-    "minutes_per_run" (hands-on effort estimate),
-    "wait_before_hours" (typical delay before this step starts, from timestamps),
-    "assumed_fields" (list every numeric field that is an estimate rather than
-      directly measured from timestamps; minutes_per_run is almost always assumed),
-    "evidence" (1-3 short references like "07 Mar 13:30 Person 2: reminder for approval")
+    "minutes_per_run" (your estimate of hands-on effort per occurrence),
+    "starts_on_external_event" (true only if the step is triggered by something
+        outside the team, such as a new customer order),
+    "message_ids" (the message numbers where this step happens, ONE message
+        per occurrence, e.g. [7, 25] if it happened twice)
 - "pain_points": list; each has "kind" (one of waiting, rework, duplicate_entry,
-    manual_chasing, manual_lookup, other), "description", "step_ids", "evidence"
+    manual_chasing, manual_lookup, other), "description", "step_ids",
+    "message_ids" (supporting message numbers)
 - "mermaid": a valid Mermaid flowchart ("flowchart TD") of the steps using ids
     S1, S2... as node ids, with labels in quotes. Include decision points
     such as partial stock. No styling.
 
-Split steps so each has one actor and one system. Do not invent steps that the
-chat does not show."""
+Aim for 8-12 steps. Merge tiny steps done by the same person in the same tool.
+Do not invent steps that the chat does not show."""
 
 
-def _format_digest(d: ChatDigest) -> str:
+def format_transcript(d: ChatDigest) -> str:
     start, end = d.date_range
     days = max((end - start).days, 1)
     lines = [
         f"Chat: {d.source_name}",
         f"Period: {start:%d %b %Y} to {end:%d %b %Y} ({days} days)",
-        f"Messages: {d.total_messages}",
         "Participants: " + ", ".join(f"{p} ({n} msgs)" for p, n in d.participants.items()),
-        "Median reply times: " + ", ".join(
-            f"{s.responder} {s.median_minutes / 60:.1f}h" for s in d.response_stats
-        ),
-        f"Follow-up/chasing messages: {d.follow_up_count}",
-        f"Files shared: {d.attachment_count}",
         "",
         "Transcript:",
     ]
-    for m in d.messages:
+    for i, m in enumerate(d.messages):
         text = m.text.replace("\n", " / ")
-        lines.append(f"[{m.timestamp:%d %b %H:%M}] {m.sender}: {text}")
+        lines.append(f"#{i} [{m.timestamp:%a %d %b %H:%M}] {m.sender}: {text}")
     return "\n".join(lines)
 
 
 def map_process(digest: ChatDigest) -> ProcessMap:
-    prompt = INSTRUCTIONS + "\n\n" + _format_digest(digest)
+    prompt = INSTRUCTIONS + "\n\n" + format_transcript(digest)
     return generate_json(SYSTEM, prompt, ProcessMap)
