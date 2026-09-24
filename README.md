@@ -8,17 +8,24 @@ lost, and what to automate, with savings proven by replaying the real history.
 - [x] Step 2: Mapper agent reconstructs the process (Gemini, with retries and model fallback)
 - [x] Step 3: Analyst agent scores every step (waits measured in working hours from real timestamps)
 - [x] Step 4: Recommender + devil's advocate agents (risk-adjusted ranking, rupee estimates)
-- [ ] Step 5: Replay engine (counterfactual savings on real chat history)
+- [x] Step 5: Replay engine: re-runs the real history with the automations applied
+      (event-log agent traces every order; working-hours maths; chasers linked to orders)
 - [ ] Step 6: Streamlit app
 
 ## Run it
     python3 -m venv .venv && source .venv/bin/activate
     pip install -r requirements.txt
     cp .env.example .env        # then add your free Gemini key from aistudio.google.com
-    python3 xray.py sample_data/sharma_traders_orders.txt
+    python3 xray.py sample_data/sharma_traders_2months.txt   # 32 orders over two months
+    python3 xray.py sample_data/sharma_traders_orders.txt    # small 10-day example
 
 Use `--parse` to run only the parser (no AI key needed).
 
 ## Privacy
 Names become "Person 1, 2, 3", and phone numbers and emails are removed on your
 machine before anything is sent to an AI model.
+
+## Sample data
+Both sample chats are fictional. `tools/generate_sample.py` creates the
+two-month chat reproducibly (seeded), including realistic delays, partial
+stock, invoice rate errors, reminders, and slow payers.

@@ -51,40 +51,69 @@ def _call_model(model: str, system: str, prompt: str) -> str:
             system_instruction=system,
             response_mime_type="application/json",
             temperature=0.2,
+            max_output_tokens=32768,   # long replies, e.g. event logs for months of chat
             automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
         ),
     )
     return response.text or ""
 
 
+BUSY_CODES = (429, 500, 502, 503, 504)
+_out_of_quota: set[str] = set()   # models that said "quota used up" during this run
+ROUNDS = 4                      # full passes through the model list when all are busy
+ROUND_WAITS = [0, 20, 45, 90]   # seconds to wait before each pass
+
+
 def generate_json(system: str, prompt: str, schema: type[T], max_attempts: int = 3) -> T:
-    """Ask the model for JSON matching `schema`. Retries on bad JSON and on
-    rate limits, then falls back to the next model in MODELS."""
+    """Ask the model for JSON matching `schema`.
+
+    - Bad JSON: tell the model what was wrong and retry (same model).
+    - Busy or rate-limited: move to the next model quickly.
+    - Every model busy: wait, then try the whole list again (up to ROUNDS times),
+      because Google's servers are usually busy for minutes, not hours."""
     from google.genai import errors
 
     last_error: Exception | None = None
-    for model in MODELS:
-        feedback = ""
-        for attempt in range(1, max_attempts + 1):
-            try:
-                raw = _call_model(model, system, prompt + feedback)
-                return schema.model_validate(json.loads(_extract_json(raw)))
-            except (json.JSONDecodeError, ValidationError) as e:
-                last_error = e
-                # Tell the model exactly what was wrong and try again
-                feedback = (
-                    "\n\nYour previous reply was not valid for the required JSON "
-                    f"format. Error: {str(e)[:500]}\nReturn corrected JSON only."
-                )
-                print(f"  [{model}] invalid JSON, retrying ({attempt}/{max_attempts})")
-            except errors.APIError as e:
-                last_error = e
-                code = getattr(e, "code", None)
-                if code in (429, 500, 503) and attempt < 2:
-                    wait = 5
-                    print(f"  [{model}] busy or rate-limited ({code}), waiting {wait}s")
-                    time.sleep(wait)
-                    continue
-                print(f"  [{model}] failed ({code}), trying next model")
-                break
+    usable = [m for m in MODELS if m not in _out_of_quota] or list(MODELS)
+    for round_no in range(ROUNDS):
+        if round_no:
+            wait = ROUND_WAITS[min(round_no, len(ROUND_WAITS) - 1)]
+            print(f"  All models busy. Waiting {wait}s, then trying again "
+                  f"(round {round_no + 1}/{ROUNDS})...")
+            time.sleep(wait)
+        any_busy = False
+        for model in list(usable):
+            feedback = ""
+            for attempt in range(1, max_attempts + 1):
+                try:
+                    raw = _call_model(model, system, prompt + feedback)
+                    return schema.model_validate(json.loads(_extract_json(raw)))
+                except (json.JSONDecodeError, ValidationError) as e:
+                    last_error = e
+                    feedback = (
+                        "\n\nYour previous reply was not valid for the required JSON "
+                        f"format. Error: {str(e)[:500]}\nReturn corrected JSON only."
+                    )
+                    print(f"  [{model}] invalid JSON, retrying ({attempt}/{max_attempts})")
+                except errors.APIError as e:
+                    last_error = e
+                    code = getattr(e, "code", None)
+                    if code in BUSY_CODES and attempt == 1:
+                        print(f"  [{model}] busy ({code}), retrying in 5s")
+                        time.sleep(5)
+                        continue
+                    if code == 429:
+                        # Quota used up: skip this model for the rest of the run
+                        _out_of_quota.add(model)
+                        usable.remove(model)
+                        print(f"  [{model}] quota used up, skipping it for this run")
+                        break
+                    print(f"  [{model}] unavailable ({code}), trying next model")
+                    if code in BUSY_CODES:
+                        any_busy = True
+                    else:
+                        usable.remove(model)      # e.g. not in the free tier; skip from now on
+                    break
+        if not any_busy or not usable:
+            break
     raise RuntimeError(f"All models failed. Last error: {last_error}")

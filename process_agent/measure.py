@@ -2,6 +2,7 @@
 
 Waits are counted in working hours (Mon-Sat, 09:00-19:00 by default), so a
 message sent at 7 pm and answered at 10 am next day counts as 1 hour, not 15."""
+import re
 import statistics
 from datetime import datetime, timedelta
 
@@ -26,6 +27,24 @@ def working_hours_between(a: datetime, b: datetime) -> float:
                 total += (end - start).total_seconds() / 3600
         day += timedelta(days=1)
     return total
+
+
+def add_working_hours(t: datetime, hours: float) -> datetime:
+    """Move forward by `hours` of working time, skipping nights and Sundays."""
+    remaining = hours * 3600
+    while True:
+        day_open = t.replace(hour=WORK_START, minute=0, second=0, microsecond=0)
+        day_close = t.replace(hour=WORK_END, minute=0, second=0, microsecond=0)
+        if t.weekday() not in WORK_DAYS or t >= day_close:
+            t = (t + timedelta(days=1)).replace(hour=WORK_START, minute=0, second=0, microsecond=0)
+            continue
+        if t < day_open:
+            t = day_open
+        available = (day_close - t).total_seconds()
+        if remaining <= available:
+            return t + timedelta(seconds=remaining)
+        remaining -= available
+        t = day_close
 
 
 def _wait_before(messages, i: int) -> float:
@@ -63,6 +82,10 @@ def measure_steps(pmap: ProcessMap, digest: ChatDigest) -> ProcessMap:
 
     for step in pmap.steps:
         ids = sorted({i for i in step.message_ids if 0 <= i < len(msgs)})
+        actors = set(re.findall(r"Person \d+", step.actor))
+        if actors:
+            own = [i for i in ids if msgs[i].sender in actors]
+            ids = own or ids     # fall back if the actor label doesn't match
         step.message_ids = ids
         assumed = ["minutes_per_run"]
         if ids:

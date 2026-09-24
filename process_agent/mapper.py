@@ -20,6 +20,7 @@ class MappedStep(BaseModel):
     output: str
     minutes_per_run: float                    # hands-on effort (estimated)
     starts_on_external_event: bool = False    # e.g. a customer order arrives
+    timing_depends_on_outsiders: bool = False # customers, transporters, banks, physical work
     message_ids: list[int] = Field(default_factory=list)
     # Filled in by measure.py, not by the model
     frequency_per_week: float = 0.0
@@ -65,6 +66,9 @@ Return a JSON object with exactly these keys:
     "minutes_per_run" (your estimate of hands-on effort per occurrence),
     "starts_on_external_event" (true only if the step is triggered by something
         outside the team, such as a new customer order),
+    "timing_depends_on_outsiders" (true if the wait before this step mostly depends
+        on customers, transporters, suppliers, banks or physical work, e.g. a
+        payment arriving or a truck collecting goods),
     "message_ids" (the message numbers where this step happens, ONE message
         per occurrence, e.g. [7, 25] if it happened twice)
 - "pain_points": list; each has "kind" (one of waiting, rework, duplicate_entry,
@@ -74,7 +78,9 @@ Return a JSON object with exactly these keys:
     S1, S2... as node ids, with labels in quotes. Include decision points
     such as partial stock. No styling.
 
-Aim for 8-12 steps. Merge tiny steps done by the same person in the same tool.
+Aim for 8-12 steps. Merge tiny steps done by the same person in the same tool,
+but keep "payment received" separate from "chasing payment", and keep internal
+dispatch instructions separate from the physical dispatch.
 Do not invent steps that the chat does not show."""
 
 

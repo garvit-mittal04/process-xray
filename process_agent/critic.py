@@ -48,7 +48,8 @@ INSTRUCTIONS = """Review every recommendation below. For each, return:
 - "id": the recommendation id
 - "risks": 2-3 specific risks, each with "risk", "severity" (1-5) and a practical "mitigation"
 - "who_might_resist": which role might push back and why, in one sentence
-- "confidence": 1-5, how likely it works as described for this business
+- "confidence": 1-5, how likely it works as described for this business, including
+  whether its timing assumptions are realistic
 - "verdict": "go", "go_with_changes", or "rethink"
 - "change_needed": if not "go", the one change that would fix it
 
@@ -68,8 +69,11 @@ def _format(plan: Plan) -> str:
             f"   Tools: {', '.join(r.tools)} | setup {r.setup_days:g} days | "
             f"Rs {r.monthly_tool_cost_inr:,.0f}/month",
             f"   Human in the loop: {r.human_in_the_loop}",
-            f"   Expected: saves {r.hours_saved_per_week} h/week of work and "
-            f"{r.waiting_removed_per_week} h/week of waiting",
+            f"   Measured by replaying the real chat history: saves {r.hours_saved_per_week} h/week "
+            f"of work, removes {r.waiting_removed_per_week} h/week of waiting, avoids "
+            f"{r.chasers_avoided_per_week} chasing messages/week",
+            f"   Timing assumptions: " + "; ".join(
+                f"{x.step_id} within {x.max_wait_hours:g} h ({x.why})" for x in r.replay_rules),
         ]
     return "\n".join(lines)
 

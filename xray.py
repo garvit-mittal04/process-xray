@@ -39,8 +39,9 @@ def show_report(r) -> None:
         print(f"\n  #{item.rank} {rec.title}  [{VERDICTS[c.verdict]}, confidence {c.confidence}/5]")
         print(f"     Covers {', '.join(rec.step_ids)} | {LABELS[rec.treatment]}")
         print(f"     {rec.what_it_does}")
-        print(f"     Saves {rec.hours_saved_per_week} h/week of work, {rec.waiting_removed_per_week} h/week "
-              f"of waiting | value Rs {rec.monthly_value_inr:,.0f}/month")
+        print(f"     Replay: saves {rec.hours_saved_per_week} h/week of work, removes "
+              f"{rec.waiting_removed_per_week} h/week of waiting, avoids "
+              f"{rec.chasers_avoided_per_week} chasers/week | value Rs {rec.monthly_value_inr:,.0f}/month")
         print(f"     Setup {rec.setup_days:g} days (Rs {rec.setup_cost_inr:,.0f}) | "
               f"tools Rs {rec.monthly_tool_cost_inr:,.0f}/month | payback {payback}")
         print(f"     Tools: {', '.join(rec.tools)}")
@@ -51,9 +52,31 @@ def show_report(r) -> None:
         if c.change_needed:
             print(f"     Change needed: {c.change_needed}")
 
+    rp = r.replay
+    rejected = [x for x in r.ranking if x.critique.verdict == "rethink"]
+    print("\nREPLAY: your real history, re-run with the recommended automations")
+    if rejected:
+        print(f"  (excluding {len(rejected)} idea(s) the devil's advocate said to rethink)")
+    print(f"  Cases replayed: {rp.cases}")
+    print(f"  Average time per case: {rp.avg_cycle_before_h} -> {rp.avg_cycle_after_h} working hours "
+          f"({rp.avg_days_before} -> {rp.avg_days_after} calendar days)")
+    print(f"  Waiting removed: {rp.waiting_removed_h_total} h in total ({rp.waiting_removed_per_week} h/week)")
+    print(f"  Chasing messages that would not have been needed: {rp.chasers_avoided}")
+    faster = [m for m in rp.milestones if m.avg_hours_before - m.avg_hours_after >= 0.5]
+    if faster:
+        print("  How soon each step is reached after an order arrives (working hours):")
+        for m in faster:
+            print(f"    - {m.step_name}: {m.avg_hours_before:g} h -> {m.avg_hours_after:g} h "
+                  f"({m.avg_hours_before - m.avg_hours_after:.1f} h sooner, {m.cases} cases)")
+    if rp.moments:
+        print("  Moments that would have gone differently:")
+        for m in rp.moments:
+            print(f"    - {m.case_label}: '{m.step_name}' at {m.after:%a %d %b %H:%M} "
+                  f"instead of {m.before:%a %d %b %H:%M} ({m.hours_sooner:g} working h sooner)")
+
     s = r.plan.settings
-    print(f"\nAssumptions: staff time Rs {s.staff_cost_per_hour_inr:g}/h, builder Rs "
-          f"{s.setup_cost_per_day_inr:,.0f}/day. Minutes per step are estimates; "
+    print(f"\nAssumptions: staff time Rs {s.staff_cost_per_hour_inr:g}/h, owner time Rs "
+          f"{s.owner_cost_per_hour_inr:g}/h, builder Rs {s.setup_cost_per_day_inr:,.0f}/day. Minutes per step are estimates; "
           f"frequencies and waits are measured.")
 
 

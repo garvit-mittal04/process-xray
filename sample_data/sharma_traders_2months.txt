@@ -1,0 +1,538 @@
+02/03/26, 9:00 am - Messages and calls are end-to-end encrypted. No one outside of this chat can read or listen to them.
+02/03/26, 9:00 am - Rakesh Sharma created group "Orders - Sharma Traders"
+02/03/26, 9:30 am - Rakesh Sharma: Gupta Stores ka order aaya hai - 10 cartons Mustard oil 15L. PO attached
+02/03/26, 9:31 am - Rakesh Sharma: PO_Gupta_0203.pdf (file attached)
+02/03/26, 9:56 am - Anjali Verma: Received sir. Stock check karti hoon
+02/03/26, 10:11 am - Anjali Verma: Suresh Mustard oil 15L kitna stock hai? Gupta ji ko 10 chahiye
+02/03/26, 11:16 am - Suresh Yadav: 10 cartons hai madam
+02/03/26, 11:59 am - Anjali Verma: Invoice INV_2301 ready - Gupta ji, 10 cartons @ Rs 2350. Approval please
+02/03/26, 12:00 pm - Anjali Verma: INV_2301.pdf (file attached)
+02/03/26, 3:10 pm - Anjali Verma: Gentle reminder sir, INV_2301 approval pending
+03/03/26, 9:59 am - Suresh Yadav: Sab log kal 10 baje meeting mein aana
+03/03/26, 1:00 pm - Rakesh Sharma: Khanna Distributors ka order aaya hai - 40 cartons Atta 10kg. PO attached
+03/03/26, 1:01 pm - Rakesh Sharma: PO_Khanna_0303.pdf (file attached)
+03/03/26, 1:31 pm - Anjali Verma: Suresh Atta 10kg kitna stock hai? Khanna ji ko 40 chahiye
+03/03/26, 1:58 pm - Suresh Yadav: 30 cartons hai madam
+03/03/26, 2:12 pm - Anjali Verma: Sir Khanna ji ke liye sirf 30 hai. Partial dispatch karein?
+03/03/26, 2:59 pm - Rakesh Sharma: INV_2301 approved. Dispatch karo
+03/03/26, 3:09 pm - Anjali Verma: Suresh Gupta ji ka dispatch ready karo, transporter ko call karo
+03/03/26, 4:29 pm - Suresh Yadav: Transporter shaam ko aayega
+03/03/26, 5:13 pm - Rakesh Sharma: Haan Khanna ji ko 30 bhej do, baaki next week
+03/03/26, 6:16 pm - Anjali Verma: Invoice INV_2302 ready - Khanna ji, 30 cartons @ Rs 420. Approval please
+03/03/26, 6:17 pm - Anjali Verma: INV_2302.pdf (file attached)
+04/03/26, 9:31 am - Suresh Yadav: Gupta ji ka dispatch ho gaya. LR attached
+04/03/26, 9:32 am - Suresh Yadav: <Media omitted>
+04/03/26, 10:21 am - Anjali Verma: LR number Tally mein update kar diya, Gupta ji ko bata diya
+04/03/26, 11:27 am - Anjali Verma: Gentle reminder sir, INV_2302 approval pending
+04/03/26, 1:34 pm - Rakesh Sharma: Agarwal Traders ka order aaya hai - 50 cartons Sugar 50kg. PO attached
+04/03/26, 1:35 pm - Rakesh Sharma: PO_Agarwal_0403.pdf (file attached)
+04/03/26, 1:49 pm - Rakesh Sharma: Approved INV_2302
+04/03/26, 1:57 pm - Anjali Verma: Suresh Khanna ji ka dispatch ready karo, transporter ko call karo
+04/03/26, 2:23 pm - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Agarwal ji ko 50 chahiye
+04/03/26, 3:19 pm - Suresh Yadav: 20 cartons hai madam
+04/03/26, 3:26 pm - Anjali Verma: Sir Agarwal ji ke liye sirf 20 hai. Partial dispatch karein?
+04/03/26, 3:59 pm - Suresh Yadav: Transporter kal subah aayega
+05/03/26, 9:38 am - Rakesh Sharma: Haan Agarwal ji ko 20 bhej do, baaki next week
+05/03/26, 10:25 am - Anjali Verma: Invoice INV_2303 ready - Agarwal ji, 20 cartons @ Rs 2250. Approval please
+05/03/26, 10:26 am - Anjali Verma: INV_2303.pdf (file attached)
+05/03/26, 10:32 am - Anjali Verma: Sab log kal 10 baje meeting mein aana
+05/03/26, 1:35 pm - Suresh Yadav: Khanna ji ka dispatch ho gaya. LR attached
+05/03/26, 1:36 pm - Suresh Yadav: <Media omitted>
+05/03/26, 2:19 pm - Anjali Verma: LR number Tally mein update kar diya, Khanna ji ko bata diya
+05/03/26, 2:33 pm - Rakesh Sharma: Agarwal ji wala invoice theek hai, dispatch karo
+05/03/26, 3:05 pm - Anjali Verma: Suresh Agarwal ji ka dispatch ready karo, transporter ko call karo
+05/03/26, 5:29 pm - Suresh Yadav: Transporter ko bol diya madam
+06/03/26, 12:38 pm - Rakesh Sharma: Jain Provision ka order aaya hai - 25 cartons Sugar 50kg. PO attached
+06/03/26, 12:39 pm - Rakesh Sharma: PO_Jain_0603.pdf (file attached)
+06/03/26, 1:10 pm - Anjali Verma: Received sir. Stock check karti hoon
+06/03/26, 1:14 pm - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Jain ji ko 25 chahiye
+06/03/26, 1:54 pm - Suresh Yadav: 10 cartons hai madam
+06/03/26, 2:10 pm - Suresh Yadav: Agarwal ji ka dispatch ho gaya. LR attached
+06/03/26, 2:11 pm - Suresh Yadav: <Media omitted>
+06/03/26, 2:12 pm - Anjali Verma: Sir Jain ji ke liye sirf 10 hai. Partial dispatch karein?
+06/03/26, 2:26 pm - Anjali Verma: LR number Tally mein update kar diya, Agarwal ji ko bata diya
+06/03/26, 6:58 pm - Rakesh Sharma: Haan Jain ji ko 10 bhej do, baaki next week
+07/03/26, 9:23 am - Anjali Verma: Invoice INV_2304 ready - Jain ji, 10 cartons @ Rs 2250. Approval please
+07/03/26, 9:24 am - Anjali Verma: INV_2304.pdf (file attached)
+07/03/26, 11:52 am - Rakesh Sharma: Bansal Mart ka order aaya hai - 50 cartons Sugar 50kg. PO attached
+07/03/26, 11:53 am - Rakesh Sharma: PO_Bansal_0703.pdf (file attached)
+07/03/26, 12:19 pm - Anjali Verma: Received sir. Stock check karti hoon
+07/03/26, 12:32 pm - Anjali Verma: Gentle reminder sir, INV_2304 approval pending
+07/03/26, 12:36 pm - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Bansal ji ko 50 chahiye
+07/03/26, 12:54 pm - Rakesh Sharma: INV_2304 approved. Dispatch karo
+07/03/26, 1:25 pm - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+07/03/26, 2:20 pm - Suresh Yadav: Sab log kal 10 baje meeting mein aana
+07/03/26, 2:54 pm - Rakesh Sharma: Suresh any update?
+07/03/26, 3:54 pm - Suresh Yadav: Transporter shaam ko aayega
+09/03/26, 10:44 am - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+09/03/26, 10:45 am - Suresh Yadav: <Media omitted>
+09/03/26, 11:11 am - Suresh Yadav: 50 cartons hai madam
+09/03/26, 11:21 am - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+09/03/26, 11:55 am - Anjali Verma: Invoice INV_2305 ready - Bansal ji, 50 cartons @ Rs 2250. Approval please
+09/03/26, 11:56 am - Anjali Verma: INV_2305.pdf (file attached)
+09/03/26, 3:04 pm - Anjali Verma: Gentle reminder sir, INV_2305 approval pending
+09/03/26, 6:58 pm - Rakesh Sharma: Mehta Retail ka order aaya hai - 25 cartons Atta 10kg. PO attached
+09/03/26, 6:59 pm - Rakesh Sharma: PO_Mehta_0903.pdf (file attached)
+10/03/26, 9:43 am - Anjali Verma: Suresh Atta 10kg kitna stock hai? Mehta ji ko 25 chahiye
+10/03/26, 11:47 am - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+10/03/26, 2:06 pm - Rakesh Sharma: Bansal ji wala invoice theek hai, dispatch karo
+10/03/26, 2:19 pm - Anjali Verma: Suresh Bansal ji ka dispatch ready karo, transporter ko call karo
+10/03/26, 3:40 pm - Suresh Yadav: 10 cartons hai madam
+10/03/26, 3:54 pm - Anjali Verma: Sir Mehta ji ke liye sirf 10 hai. Partial dispatch karein?
+10/03/26, 4:26 pm - Suresh Yadav: Transporter kal subah aayega
+10/03/26, 6:28 pm - Rakesh Sharma: Haan Mehta ji ko 10 bhej do, baaki next week
+11/03/26, 9:48 am - Anjali Verma: Invoice INV_2306 ready - Mehta ji, 10 cartons @ Rs 420. Approval please
+11/03/26, 9:49 am - Anjali Verma: INV_2306.pdf (file attached)
+11/03/26, 1:00 pm - Anjali Verma: Gentle reminder sir, INV_2306 approval pending
+11/03/26, 1:11 pm - Rakesh Sharma: Jain Provision ka order aaya hai - 40 cartons Sunflower oil 1L. PO attached
+11/03/26, 1:12 pm - Rakesh Sharma: PO_Jain_1103.pdf (file attached)
+11/03/26, 1:59 pm - Anjali Verma: Received sir. Stock check karti hoon
+11/03/26, 2:11 pm - Anjali Verma: Suresh Sunflower oil 1L kitna stock hai? Jain ji ko 40 chahiye
+11/03/26, 2:34 pm - Suresh Yadav: Bansal ji ka dispatch ho gaya. LR attached
+11/03/26, 2:35 pm - Suresh Yadav: <Media omitted>
+11/03/26, 3:50 pm - Anjali Verma: LR number Tally mein update kar diya, Bansal ji ko bata diya
+11/03/26, 4:23 pm - Rakesh Sharma: Suresh any update?
+11/03/26, 6:34 pm - Rakesh Sharma: Approved INV_2306
+12/03/26, 9:03 am - Anjali Verma: Suresh Mehta ji ka dispatch ready karo, transporter ko call karo
+12/03/26, 11:03 am - Suresh Yadav: Transporter shaam ko aayega
+12/03/26, 11:14 am - Suresh Yadav: 40 cartons hai madam
+12/03/26, 11:46 am - Anjali Verma: Invoice INV_2307 ready - Jain ji, 40 cartons @ Rs 1450. Approval please
+12/03/26, 11:47 am - Anjali Verma: INV_2307.pdf (file attached)
+12/03/26, 12:10 pm - Rakesh Sharma: Mehta Retail ka order aaya hai - 25 cartons Atta 10kg. PO attached
+12/03/26, 12:11 pm - Rakesh Sharma: PO_Mehta_1203.pdf (file attached)
+12/03/26, 12:51 pm - Anjali Verma: Received sir. Stock check karti hoon
+12/03/26, 1:06 pm - Anjali Verma: Suresh Atta 10kg kitna stock hai? Mehta ji ko 25 chahiye
+12/03/26, 3:06 pm - Anjali Verma: Gupta ji ka payment aa gaya - Rs 23,500 (cheque)
+12/03/26, 3:22 pm - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+12/03/26, 5:51 pm - Suresh Yadav: 25 cartons hai madam
+13/03/26, 9:29 am - Anjali Verma: Invoice INV_2308 ready - Mehta ji, 25 cartons @ Rs 420. Approval please
+13/03/26, 9:30 am - Anjali Verma: INV_2308.pdf (file attached)
+13/03/26, 10:02 am - Rakesh Sharma: Mehta ji wala invoice theek hai, dispatch karo
+13/03/26, 10:03 am - Suresh Yadav: Mehta ji ka dispatch ho gaya. LR attached
+13/03/26, 10:04 am - Suresh Yadav: <Media omitted>
+13/03/26, 10:10 am - Anjali Verma: Suresh Mehta ji ka dispatch ready karo, transporter ko call karo
+13/03/26, 10:49 am - Anjali Verma: LR number Tally mein update kar diya, Mehta ji ko bata diya
+13/03/26, 12:02 pm - Suresh Yadav: Transporter ko bol diya madam
+13/03/26, 12:57 pm - Rakesh Sharma: INV_2307 approved. Dispatch karo
+13/03/26, 1:16 pm - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+13/03/26, 3:31 pm - Suresh Yadav: Transporter kal subah aayega
+13/03/26, 4:31 pm - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+13/03/26, 4:32 pm - Suresh Yadav: <Media omitted>
+13/03/26, 5:00 pm - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+13/03/26, 6:10 pm - Suresh Yadav: Mehta ji ka dispatch ho gaya. LR attached
+13/03/26, 6:11 pm - Suresh Yadav: <Media omitted>
+13/03/26, 6:48 pm - Rakesh Sharma: Singh Kirana ka order aaya hai - 10 cartons Atta 10kg. PO attached
+14/03/26, 9:15 am - Anjali Verma: Received sir. Stock check karti hoon
+14/03/26, 9:23 am - Anjali Verma: LR number Tally mein update kar diya, Mehta ji ko bata diya
+14/03/26, 9:30 am - Anjali Verma: Suresh Atta 10kg kitna stock hai? Singh ji ko 10 chahiye
+14/03/26, 11:42 am - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+14/03/26, 4:09 pm - Anjali Verma: Transporter ka rate badh gaya hai
+14/03/26, 4:33 pm - Suresh Yadav: 10 cartons hai madam
+14/03/26, 5:26 pm - Rakesh Sharma: Agarwal Traders ka order aaya hai - 15 cartons Atta 10kg. PO attached
+14/03/26, 5:27 pm - Rakesh Sharma: PO_Agarwal_1403.pdf (file attached)
+14/03/26, 5:38 pm - Anjali Verma: Received sir. Stock check karti hoon
+14/03/26, 5:40 pm - Anjali Verma: Invoice INV_2309 ready - Singh ji, 10 cartons @ Rs 420. Approval please
+14/03/26, 5:41 pm - Anjali Verma: INV_2309.pdf (file attached)
+14/03/26, 5:52 pm - Anjali Verma: Suresh Atta 10kg kitna stock hai? Agarwal ji ko 15 chahiye
+16/03/26, 9:55 am - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+16/03/26, 12:28 pm - Rakesh Sharma: INV_2309 approved. Dispatch karo
+16/03/26, 12:41 pm - Suresh Yadav: 15 cartons hai madam
+16/03/26, 12:59 pm - Anjali Verma: Suresh Singh ji ka dispatch ready karo, transporter ko call karo
+16/03/26, 1:33 pm - Anjali Verma: Invoice INV_2310 ready - Agarwal ji, 15 cartons @ Rs 420. Approval please
+16/03/26, 1:34 pm - Anjali Verma: INV_2310.pdf (file attached)
+16/03/26, 1:46 pm - Suresh Yadav: Transporter kal subah aayega
+16/03/26, 2:11 pm - Rakesh Sharma: Approved INV_2310
+16/03/26, 2:34 pm - Anjali Verma: Suresh Agarwal ji ka dispatch ready karo, transporter ko call karo
+16/03/26, 3:57 pm - Suresh Yadav: Transporter kal subah aayega
+17/03/26, 9:31 am - Suresh Yadav: Singh ji ka dispatch ho gaya. LR attached
+17/03/26, 9:32 am - Suresh Yadav: <Media omitted>
+17/03/26, 10:08 am - Anjali Verma: LR number Tally mein update kar diya, Singh ji ko bata diya
+17/03/26, 11:02 am - Suresh Yadav: Agarwal ji ka dispatch ho gaya. LR attached
+17/03/26, 11:03 am - Suresh Yadav: <Media omitted>
+17/03/26, 11:54 am - Anjali Verma: LR number Tally mein update kar diya, Agarwal ji ko bata diya
+17/03/26, 12:48 pm - Rakesh Sharma: Singh Kirana ka order aaya hai - 10 cartons Sunflower oil 1L. PO attached
+17/03/26, 12:49 pm - Rakesh Sharma: PO_Singh_1703.pdf (file attached)
+17/03/26, 1:03 pm - Anjali Verma: Suresh Sunflower oil 1L kitna stock hai? Singh ji ko 10 chahiye
+17/03/26, 2:05 pm - Rakesh Sharma: Khanna ji ka payment aaya kya? kab tak aayega
+17/03/26, 3:01 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+17/03/26, 3:06 pm - Rakesh Sharma: Suresh any update?
+17/03/26, 4:44 pm - Suresh Yadav: 10 cartons hai madam
+17/03/26, 6:14 pm - Anjali Verma: Invoice INV_2311 ready - Singh ji, 10 cartons @ Rs 1450. Approval please
+17/03/26, 6:15 pm - Anjali Verma: INV_2311.pdf (file attached)
+18/03/26, 10:28 am - Rakesh Sharma: INV_2311 approved. Dispatch karo
+18/03/26, 10:42 am - Anjali Verma: Suresh Singh ji ka dispatch ready karo, transporter ko call karo
+18/03/26, 11:14 am - Suresh Yadav: Transporter kal subah aayega
+18/03/26, 12:00 pm - Rakesh Sharma: Jain Provision ka order aaya hai - 30 cartons Atta 10kg. PO attached
+18/03/26, 12:01 pm - Rakesh Sharma: PO_Jain_1803.pdf (file attached)
+18/03/26, 12:28 pm - Anjali Verma: Received sir. Stock check karti hoon
+18/03/26, 12:32 pm - Anjali Verma: Suresh Atta 10kg kitna stock hai? Jain ji ko 30 chahiye
+18/03/26, 2:45 pm - Suresh Yadav: 30 cartons hai madam
+18/03/26, 3:24 pm - Anjali Verma: Invoice INV_2312 ready - Jain ji, 30 cartons @ Rs 420. Approval please
+18/03/26, 3:25 pm - Anjali Verma: INV_2312.pdf (file attached)
+18/03/26, 4:27 pm - Rakesh Sharma: Approved INV_2312
+18/03/26, 4:34 pm - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+18/03/26, 4:47 pm - Rakesh Sharma: Agarwal ji ka payment aaya kya? kab tak aayega
+18/03/26, 5:06 pm - Suresh Yadav: Transporter ko bol diya madam
+18/03/26, 6:26 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+19/03/26, 10:55 am - Suresh Yadav: Singh ji ka dispatch ho gaya. LR attached
+19/03/26, 10:56 am - Suresh Yadav: <Media omitted>
+19/03/26, 11:13 am - Anjali Verma: LR number Tally mein update kar diya, Singh ji ko bata diya
+19/03/26, 11:32 am - Rakesh Sharma: Arora Supermart ka order aaya hai - 50 cartons Mustard oil 15L. PO attached
+19/03/26, 12:19 pm - Anjali Verma: Received sir. Stock check karti hoon
+19/03/26, 12:25 pm - Anjali Verma: Suresh Mustard oil 15L kitna stock hai? Arora ji ko 50 chahiye
+19/03/26, 2:32 pm - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+19/03/26, 2:32 pm - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+19/03/26, 2:33 pm - Suresh Yadav: <Media omitted>
+19/03/26, 2:58 pm - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+19/03/26, 3:49 pm - Anjali Verma: Jain ji ka payment aa gaya - Rs 22,500 (cheque)
+20/03/26, 10:50 am - Suresh Yadav: 50 cartons hai madam
+20/03/26, 11:21 am - Anjali Verma: Invoice INV_2313 ready - Arora ji, 50 cartons @ Rs 2340. Approval please
+20/03/26, 11:22 am - Anjali Verma: INV_2313.pdf (file attached)
+20/03/26, 11:46 am - Rakesh Sharma: Rate galat hai, 2350 tha 2340 nahi. Correct karo
+20/03/26, 12:01 pm - Anjali Verma: Sorry sir, corrected. Revised invoice attached
+20/03/26, 12:02 pm - Anjali Verma: INV_2313_rev.pdf (file attached)
+20/03/26, 2:51 pm - Rakesh Sharma: Approved INV_2313
+20/03/26, 3:08 pm - Anjali Verma: Suresh Arora ji ka dispatch ready karo, transporter ko call karo
+20/03/26, 4:39 pm - Suresh Yadav: Transporter shaam ko aayega
+20/03/26, 4:45 pm - Rakesh Sharma: Arora Supermart ka order aaya hai - 20 cartons Sunflower oil 1L. PO attached
+20/03/26, 4:46 pm - Rakesh Sharma: PO_Arora_2003.pdf (file attached)
+20/03/26, 5:13 pm - Anjali Verma: Suresh Sunflower oil 1L kitna stock hai? Arora ji ko 20 chahiye
+20/03/26, 5:34 pm - Suresh Yadav: 10 cartons hai madam
+20/03/26, 5:42 pm - Anjali Verma: Sir Arora ji ke liye sirf 10 hai. Partial dispatch karein?
+21/03/26, 9:19 am - Rakesh Sharma: Haan Arora ji ko 10 bhej do, baaki next week
+21/03/26, 10:02 am - Anjali Verma: Invoice INV_2314 ready - Arora ji, 10 cartons @ Rs 1450. Approval please
+21/03/26, 10:03 am - Anjali Verma: INV_2314.pdf (file attached)
+21/03/26, 11:40 am - Rakesh Sharma: Approved INV_2314
+21/03/26, 12:03 pm - Anjali Verma: Suresh Arora ji ka dispatch ready karo, transporter ko call karo
+21/03/26, 1:20 pm - Suresh Yadav: Transporter shaam ko aayega
+21/03/26, 1:31 pm - Suresh Yadav: Arora ji ka dispatch ho gaya. LR attached
+21/03/26, 1:32 pm - Suresh Yadav: <Media omitted>
+21/03/26, 2:37 pm - Anjali Verma: LR number Tally mein update kar diya, Arora ji ko bata diya
+21/03/26, 5:47 pm - Suresh Yadav: Arora ji ka dispatch ho gaya. LR attached
+21/03/26, 5:48 pm - Suresh Yadav: <Media omitted>
+21/03/26, 6:18 pm - Anjali Verma: LR number Tally mein update kar diya, Arora ji ko bata diya
+23/03/26, 2:11 pm - Anjali Verma: Mehta ji ka payment aa gaya - Rs 10,500 (UPI)
+23/03/26, 4:07 pm - Rakesh Sharma: Bansal ji ka payment aaya kya? kab tak aayega
+23/03/26, 4:57 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+23/03/26, 6:49 pm - Rakesh Sharma: Jain Provision ka order aaya hai - 40 cartons Atta 10kg. PO attached
+24/03/26, 9:14 am - Anjali Verma: Suresh Atta 10kg kitna stock hai? Jain ji ko 40 chahiye
+24/03/26, 11:27 am - Rakesh Sharma: Suresh any update?
+24/03/26, 5:41 pm - Suresh Yadav: 40 cartons hai madam
+24/03/26, 6:53 pm - Anjali Verma: Invoice INV_2315 ready - Jain ji, 40 cartons @ Rs 410. Approval please
+24/03/26, 6:54 pm - Anjali Verma: INV_2315.pdf (file attached)
+24/03/26, 6:55 pm - Rakesh Sharma: Singh Kirana ka order aaya hai - 20 cartons Sugar 50kg. PO attached
+24/03/26, 6:56 pm - Rakesh Sharma: PO_Singh_2403.pdf (file attached)
+25/03/26, 9:45 am - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Singh ji ko 20 chahiye
+25/03/26, 11:49 am - Rakesh Sharma: Suresh any update?
+25/03/26, 12:09 pm - Anjali Verma: Gentle reminder sir, INV_2315 approval pending
+25/03/26, 12:53 pm - Rakesh Sharma: Mehta ji ka payment aaya kya? kab tak aayega
+25/03/26, 2:05 pm - Suresh Yadav: 10 cartons hai madam
+25/03/26, 2:16 pm - Anjali Verma: Sir Singh ji ke liye sirf 10 hai. Partial dispatch karein?
+25/03/26, 2:23 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+25/03/26, 5:30 pm - Rakesh Sharma: Jain ji ka payment aaya kya? kab tak aayega
+25/03/26, 6:08 pm - Rakesh Sharma: Haan Singh ji ko 10 bhej do, baaki next week
+25/03/26, 6:41 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+25/03/26, 6:59 pm - Anjali Verma: Aaj bijli nahi hai, Tally thoda late update hoga
+26/03/26, 9:32 am - Anjali Verma: Invoice INV_2316 ready - Singh ji, 10 cartons @ Rs 2250. Approval please
+26/03/26, 9:33 am - Anjali Verma: INV_2316.pdf (file attached)
+26/03/26, 10:43 am - Rakesh Sharma: Bansal Mart ka order aaya hai - 40 cartons Sunflower oil 1L. PO attached
+26/03/26, 10:44 am - Rakesh Sharma: PO_Bansal_2603.pdf (file attached)
+26/03/26, 11:16 am - Anjali Verma: Suresh Sunflower oil 1L kitna stock hai? Bansal ji ko 40 chahiye
+26/03/26, 11:19 am - Rakesh Sharma: Rate galat hai, 420 tha 410 nahi. Correct karo
+26/03/26, 12:04 pm - Anjali Verma: Sorry sir, corrected. Revised invoice attached
+26/03/26, 12:05 pm - Anjali Verma: INV_2315_rev.pdf (file attached)
+26/03/26, 12:33 pm - Anjali Verma: Gentle reminder sir, INV_2316 approval pending
+26/03/26, 1:22 pm - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+26/03/26, 2:59 pm - Rakesh Sharma: Approved INV_2315
+26/03/26, 3:12 pm - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+26/03/26, 3:46 pm - Suresh Yadav: Transporter kal subah aayega
+26/03/26, 4:09 pm - Rakesh Sharma: Singh ji wala invoice theek hai, dispatch karo
+26/03/26, 4:34 pm - Anjali Verma: Suresh Singh ji ka dispatch ready karo, transporter ko call karo
+26/03/26, 5:13 pm - Suresh Yadav: Transporter kal subah aayega
+26/03/26, 5:40 pm - Anjali Verma: Stock register update kar diya
+27/03/26, 10:14 am - Suresh Yadav: 20 cartons hai madam
+27/03/26, 10:21 am - Anjali Verma: Sir Bansal ji ke liye sirf 20 hai. Partial dispatch karein?
+27/03/26, 12:33 pm - Suresh Yadav: Singh ji ka dispatch ho gaya. LR attached
+27/03/26, 12:34 pm - Suresh Yadav: <Media omitted>
+27/03/26, 12:48 pm - Rakesh Sharma: Haan Bansal ji ko 20 bhej do, baaki next week
+27/03/26, 1:36 pm - Anjali Verma: LR number Tally mein update kar diya, Singh ji ko bata diya
+27/03/26, 1:56 pm - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+27/03/26, 1:57 pm - Suresh Yadav: <Media omitted>
+27/03/26, 2:45 pm - Anjali Verma: Invoice INV_2317 ready - Bansal ji, 20 cartons @ Rs 1450. Approval please
+27/03/26, 2:46 pm - Anjali Verma: INV_2317.pdf (file attached)
+27/03/26, 3:23 pm - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+27/03/26, 3:49 pm - Rakesh Sharma: INV_2317 approved. Dispatch karo
+27/03/26, 4:12 pm - Anjali Verma: Suresh Bansal ji ka dispatch ready karo, transporter ko call karo
+27/03/26, 4:59 pm - Suresh Yadav: Transporter ko bol diya madam
+28/03/26, 9:23 am - Rakesh Sharma: Singh Kirana ka order aaya hai - 25 cartons Sugar 50kg. PO attached
+28/03/26, 9:24 am - Rakesh Sharma: PO_Singh_2803.pdf (file attached)
+28/03/26, 9:48 am - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Singh ji ko 25 chahiye
+28/03/26, 11:34 am - Suresh Yadav: Bansal ji ka dispatch ho gaya. LR attached
+28/03/26, 11:35 am - Suresh Yadav: <Media omitted>
+28/03/26, 11:51 am - Rakesh Sharma: Suresh any update?
+28/03/26, 12:14 pm - Anjali Verma: LR number Tally mein update kar diya, Bansal ji ko bata diya
+28/03/26, 2:43 pm - Suresh Yadav: 25 cartons hai madam
+28/03/26, 3:35 pm - Anjali Verma: Invoice INV_2318 ready - Singh ji, 25 cartons @ Rs 2250. Approval please
+28/03/26, 3:36 pm - Anjali Verma: INV_2318.pdf (file attached)
+28/03/26, 4:34 pm - Rakesh Sharma: Singh ji wala invoice theek hai, dispatch karo
+28/03/26, 4:49 pm - Anjali Verma: Suresh Singh ji ka dispatch ready karo, transporter ko call karo
+28/03/26, 6:03 pm - Suresh Yadav: Transporter shaam ko aayega
+30/03/26, 9:38 am - Rakesh Sharma: Singh ji ka payment aaya kya? kab tak aayega
+30/03/26, 10:22 am - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+30/03/26, 10:54 am - Anjali Verma: Arora ji ka payment aa gaya - Rs 117,500 (NEFT)
+30/03/26, 1:20 pm - Suresh Yadav: Singh ji ka dispatch ho gaya. LR attached
+30/03/26, 1:21 pm - Suresh Yadav: <Media omitted>
+30/03/26, 2:39 pm - Anjali Verma: LR number Tally mein update kar diya, Singh ji ko bata diya
+31/03/26, 1:29 pm - Rakesh Sharma: Mehta Retail ka order aaya hai - 10 cartons Atta 10kg. PO attached
+31/03/26, 1:30 pm - Rakesh Sharma: Singh ji ka payment aaya kya? kab tak aayega
+31/03/26, 1:30 pm - Rakesh Sharma: PO_Mehta_3103.pdf (file attached)
+31/03/26, 2:08 pm - Anjali Verma: Suresh Atta 10kg kitna stock hai? Mehta ji ko 10 chahiye
+31/03/26, 2:31 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+31/03/26, 2:51 pm - Rakesh Sharma: Jain ji ka payment aaya kya? kab tak aayega
+31/03/26, 4:24 pm - Rakesh Sharma: Suresh any update?
+31/03/26, 4:31 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+31/03/26, 5:31 pm - Suresh Yadav: Transporter ka rate badh gaya hai
+31/03/26, 5:40 pm - Anjali Verma: Agarwal ji ka payment aa gaya - Rs 6,300 (UPI)
+31/03/26, 5:53 pm - Suresh Yadav: 10 cartons hai madam
+01/04/26, 9:44 am - Anjali Verma: Invoice INV_2319 ready - Mehta ji, 10 cartons @ Rs 420. Approval please
+01/04/26, 9:45 am - Anjali Verma: INV_2319.pdf (file attached)
+01/04/26, 11:38 am - Rakesh Sharma: Mehta ji wala invoice theek hai, dispatch karo
+01/04/26, 11:56 am - Anjali Verma: Suresh Mehta ji ka dispatch ready karo, transporter ko call karo
+01/04/26, 1:40 pm - Suresh Yadav: Transporter kal subah aayega
+01/04/26, 3:57 pm - Anjali Verma: Jain ji ka payment aa gaya - Rs 58,000 (UPI)
+02/04/26, 10:44 am - Suresh Yadav: Mehta ji ka dispatch ho gaya. LR attached
+02/04/26, 10:45 am - Suresh Yadav: <Media omitted>
+02/04/26, 11:18 am - Rakesh Sharma: Agarwal Traders ka order aaya hai - 25 cartons Sugar 50kg. PO attached
+02/04/26, 11:19 am - Anjali Verma: LR number Tally mein update kar diya, Mehta ji ko bata diya
+02/04/26, 11:19 am - Rakesh Sharma: PO_Agarwal_0204.pdf (file attached)
+02/04/26, 11:54 am - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Agarwal ji ko 25 chahiye
+02/04/26, 1:38 pm - Anjali Verma: Khanna ji ka payment aa gaya - Rs 12,600 (NEFT)
+02/04/26, 1:56 pm - Rakesh Sharma: Suresh any update?
+02/04/26, 5:24 pm - Suresh Yadav: 25 cartons hai madam
+02/04/26, 6:33 pm - Anjali Verma: Invoice INV_2320 ready - Agarwal ji, 25 cartons @ Rs 2240. Approval please
+02/04/26, 6:34 pm - Anjali Verma: INV_2320.pdf (file attached)
+03/04/26, 10:03 am - Rakesh Sharma: Arora ji ka payment aaya kya? kab tak aayega
+03/04/26, 11:26 am - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+03/04/26, 12:45 pm - Rakesh Sharma: Rate galat hai, 2250 tha 2240 nahi. Correct karo
+03/04/26, 1:19 pm - Anjali Verma: Sorry sir, corrected. Revised invoice attached
+03/04/26, 1:20 pm - Anjali Verma: INV_2320_rev.pdf (file attached)
+03/04/26, 2:18 pm - Rakesh Sharma: Approved INV_2320
+03/04/26, 2:30 pm - Anjali Verma: Suresh Agarwal ji ka dispatch ready karo, transporter ko call karo
+03/04/26, 3:11 pm - Suresh Yadav: Transporter shaam ko aayega
+03/04/26, 4:02 pm - Rakesh Sharma: Jain Provision ka order aaya hai - 40 cartons Sugar 50kg. PO attached
+03/04/26, 4:03 pm - Rakesh Sharma: PO_Jain_0304.pdf (file attached)
+03/04/26, 4:05 pm - Anjali Verma: Agarwal ji ka payment aa gaya - Rs 45,000 (NEFT)
+03/04/26, 4:24 pm - Anjali Verma: Received sir. Stock check karti hoon
+03/04/26, 4:28 pm - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Jain ji ko 40 chahiye
+03/04/26, 6:30 pm - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+04/04/26, 10:04 am - Anjali Verma: Mehta ji ka payment aa gaya - Rs 4,200 (NEFT)
+04/04/26, 11:06 am - Suresh Yadav: 40 cartons hai madam
+04/04/26, 11:17 am - Anjali Verma: Bansal ji ka payment aa gaya - Rs 112,500 (UPI)
+04/04/26, 12:30 pm - Anjali Verma: Invoice INV_2321 ready - Jain ji, 40 cartons @ Rs 2250. Approval please
+04/04/26, 12:30 pm - Suresh Yadav: Agarwal ji ka dispatch ho gaya. LR attached
+04/04/26, 12:31 pm - Anjali Verma: INV_2321.pdf (file attached)
+04/04/26, 12:31 pm - Suresh Yadav: <Media omitted>
+04/04/26, 1:07 pm - Anjali Verma: LR number Tally mein update kar diya, Agarwal ji ko bata diya
+04/04/26, 1:32 pm - Rakesh Sharma: INV_2321 approved. Dispatch karo
+04/04/26, 1:39 pm - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+04/04/26, 3:34 pm - Suresh Yadav: Transporter shaam ko aayega
+06/04/26, 2:02 pm - Anjali Verma: Stock register update kar diya
+06/04/26, 3:22 pm - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+06/04/26, 3:23 pm - Suresh Yadav: <Media omitted>
+06/04/26, 4:12 pm - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+06/04/26, 5:26 pm - Anjali Verma: Jain ji ka payment aa gaya - Rs 12,600 (NEFT)
+07/04/26, 10:38 am - Rakesh Sharma: Arora Supermart ka order aaya hai - 15 cartons Sugar 50kg. PO attached
+07/04/26, 10:54 am - Anjali Verma: Received sir. Stock check karti hoon
+07/04/26, 11:11 am - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Arora ji ko 15 chahiye
+07/04/26, 1:21 pm - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+07/04/26, 4:29 pm - Suresh Yadav: 5 cartons hai madam
+07/04/26, 4:41 pm - Anjali Verma: Sir Arora ji ke liye sirf 5 hai. Partial dispatch karein?
+08/04/26, 9:26 am - Rakesh Sharma: Bansal Mart ka order aaya hai - 40 cartons Atta 10kg. PO attached
+08/04/26, 9:42 am - Anjali Verma: Received sir. Stock check karti hoon
+08/04/26, 9:53 am - Anjali Verma: Suresh Atta 10kg kitna stock hai? Bansal ji ko 40 chahiye
+08/04/26, 10:14 am - Suresh Yadav: 20 cartons hai madam
+08/04/26, 10:41 am - Anjali Verma: Sir Bansal ji ke liye sirf 20 hai. Partial dispatch karein?
+08/04/26, 11:18 am - Rakesh Sharma: Haan Arora ji ko 5 bhej do, baaki next week
+08/04/26, 12:07 pm - Anjali Verma: Invoice INV_2322 ready - Arora ji, 5 cartons @ Rs 2250. Approval please
+08/04/26, 12:08 pm - Anjali Verma: INV_2322.pdf (file attached)
+08/04/26, 12:57 pm - Rakesh Sharma: Singh ji ka payment aaya kya? kab tak aayega
+08/04/26, 1:01 pm - Anjali Verma: Singh ji ka payment aa gaya - Rs 4,200 (UPI)
+08/04/26, 2:01 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+08/04/26, 2:02 pm - Rakesh Sharma: Haan Bansal ji ko 20 bhej do, baaki next week
+08/04/26, 2:05 pm - Rakesh Sharma: Jain ji ka payment aaya kya? kab tak aayega
+08/04/26, 2:19 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+08/04/26, 2:43 pm - Anjali Verma: Invoice INV_2323 ready - Bansal ji, 20 cartons @ Rs 410. Approval please
+08/04/26, 2:44 pm - Anjali Verma: INV_2323.pdf (file attached)
+08/04/26, 5:21 pm - Anjali Verma: Singh ji ka payment aa gaya - Rs 56,250 (NEFT)
+08/04/26, 5:51 pm - Anjali Verma: Gentle reminder sir, INV_2323 approval pending
+09/04/26, 12:24 pm - Rakesh Sharma: Bansal ji ka payment aaya kya? kab tak aayega
+09/04/26, 12:48 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+09/04/26, 1:13 pm - Rakesh Sharma: INV_2322 approved. Dispatch karo
+09/04/26, 1:21 pm - Anjali Verma: Suresh Arora ji ka dispatch ready karo, transporter ko call karo
+09/04/26, 2:40 pm - Rakesh Sharma: Rate galat hai, 420 tha 410 nahi. Correct karo
+09/04/26, 2:54 pm - Suresh Yadav: Transporter ko bol diya madam
+09/04/26, 3:25 pm - Anjali Verma: Sorry sir, corrected. Revised invoice attached
+09/04/26, 3:26 pm - Anjali Verma: INV_2323_rev.pdf (file attached)
+09/04/26, 4:36 pm - Rakesh Sharma: Approved INV_2323
+09/04/26, 5:06 pm - Anjali Verma: Suresh Bansal ji ka dispatch ready karo, transporter ko call karo
+09/04/26, 6:04 pm - Suresh Yadav: Arora ji ka dispatch ho gaya. LR attached
+09/04/26, 6:05 pm - Suresh Yadav: <Media omitted>
+09/04/26, 6:37 pm - Anjali Verma: LR number Tally mein update kar diya, Arora ji ko bata diya
+10/04/26, 9:05 am - Suresh Yadav: Transporter ko bol diya madam
+10/04/26, 10:42 am - Suresh Yadav: Bansal ji ka dispatch ho gaya. LR attached
+10/04/26, 10:43 am - Suresh Yadav: <Media omitted>
+10/04/26, 11:33 am - Anjali Verma: LR number Tally mein update kar diya, Bansal ji ko bata diya
+10/04/26, 12:01 pm - Rakesh Sharma: Singh Kirana ka order aaya hai - 15 cartons Sugar 50kg. PO attached
+10/04/26, 12:02 pm - Rakesh Sharma: PO_Singh_1004.pdf (file attached)
+10/04/26, 12:45 pm - Anjali Verma: Received sir. Stock check karti hoon
+10/04/26, 12:57 pm - Anjali Verma: Suresh Sugar 50kg kitna stock hai? Singh ji ko 15 chahiye
+10/04/26, 3:14 pm - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+10/04/26, 5:21 pm - Anjali Verma: Mehta ji ka payment aa gaya - Rs 4,200 (UPI)
+11/04/26, 9:23 am - Suresh Yadav: 10 cartons hai madam
+11/04/26, 9:30 am - Anjali Verma: Sir Singh ji ke liye sirf 10 hai. Partial dispatch karein?
+11/04/26, 9:55 am - Rakesh Sharma: Haan Singh ji ko 10 bhej do, baaki next week
+11/04/26, 10:55 am - Anjali Verma: Invoice INV_2324 ready - Singh ji, 10 cartons @ Rs 2250. Approval please
+11/04/26, 10:56 am - Anjali Verma: INV_2324.pdf (file attached)
+11/04/26, 1:54 pm - Anjali Verma: Arora ji ka payment aa gaya - Rs 14,500 (cheque)
+11/04/26, 2:57 pm - Rakesh Sharma: Jain Provision ka order aaya hai - 20 cartons Atta 10kg. PO attached
+11/04/26, 2:58 pm - Rakesh Sharma: PO_Jain_1104.pdf (file attached)
+11/04/26, 3:07 pm - Anjali Verma: Received sir. Stock check karti hoon
+11/04/26, 3:12 pm - Anjali Verma: Suresh Atta 10kg kitna stock hai? Jain ji ko 20 chahiye
+11/04/26, 4:12 pm - Suresh Yadav: 20 cartons hai madam
+11/04/26, 5:02 pm - Anjali Verma: Invoice INV_2325 ready - Jain ji, 20 cartons @ Rs 420. Approval please
+11/04/26, 5:03 pm - Anjali Verma: INV_2325.pdf (file attached)
+11/04/26, 6:42 pm - Rakesh Sharma: Approved INV_2325
+13/04/26, 9:04 am - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+13/04/26, 10:28 am - Suresh Yadav: Transporter shaam ko aayega
+13/04/26, 10:31 am - Rakesh Sharma: Singh ji wala invoice theek hai, dispatch karo
+13/04/26, 10:40 am - Anjali Verma: Suresh Singh ji ka dispatch ready karo, transporter ko call karo
+13/04/26, 11:20 am - Suresh Yadav: Transporter kal subah aayega
+13/04/26, 1:13 pm - Anjali Verma: Jain ji ka payment aa gaya - Rs 16,800 (cheque)
+13/04/26, 3:21 pm - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+13/04/26, 3:22 pm - Suresh Yadav: <Media omitted>
+13/04/26, 3:24 pm - Rakesh Sharma: Jain Provision ka order aaya hai - 25 cartons Sunflower oil 1L. PO attached
+13/04/26, 3:25 pm - Rakesh Sharma: PO_Jain_1304.pdf (file attached)
+13/04/26, 3:35 pm - Anjali Verma: Aaj bijli nahi hai, Tally thoda late update hoga
+13/04/26, 3:39 pm - Anjali Verma: Suresh Sunflower oil 1L kitna stock hai? Jain ji ko 25 chahiye
+13/04/26, 4:38 pm - Suresh Yadav: Singh ji ka dispatch ho gaya. LR attached
+13/04/26, 4:39 pm - Suresh Yadav: <Media omitted>
+13/04/26, 4:43 pm - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+13/04/26, 5:04 pm - Anjali Verma: LR number Tally mein update kar diya, Singh ji ko bata diya
+13/04/26, 5:57 pm - Rakesh Sharma: Suresh any update?
+14/04/26, 11:15 am - Suresh Yadav: 25 cartons hai madam
+14/04/26, 12:46 pm - Anjali Verma: Invoice INV_2326 ready - Jain ji, 25 cartons @ Rs 1450. Approval please
+14/04/26, 12:47 pm - Anjali Verma: INV_2326.pdf (file attached)
+14/04/26, 3:24 pm - Rakesh Sharma: Arora Supermart ka order aaya hai - 25 cartons Basmati rice 25kg. PO attached
+14/04/26, 3:25 pm - Rakesh Sharma: PO_Arora_1404.pdf (file attached)
+14/04/26, 4:19 pm - Anjali Verma: Suresh Basmati rice 25kg kitna stock hai? Arora ji ko 25 chahiye
+14/04/26, 6:26 pm - Rakesh Sharma: Suresh any update?
+14/04/26, 6:48 pm - Rakesh Sharma: Jain ji wala invoice theek hai, dispatch karo
+15/04/26, 9:22 am - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+15/04/26, 9:53 am - Anjali Verma: Singh ji ka payment aa gaya - Rs 14,500 (NEFT)
+15/04/26, 9:56 am - Anjali Verma: Kal godown 11 baje khulega
+15/04/26, 10:00 am - Suresh Yadav: Transporter kal subah aayega
+15/04/26, 10:45 am - Suresh Yadav: 25 cartons hai madam
+15/04/26, 11:23 am - Anjali Verma: Invoice INV_2327 ready - Arora ji, 25 cartons @ Rs 2090. Approval please
+15/04/26, 11:24 am - Anjali Verma: INV_2327.pdf (file attached)
+15/04/26, 12:58 pm - Rakesh Sharma: Rate galat hai, 2100 tha 2090 nahi. Correct karo
+15/04/26, 1:20 pm - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+15/04/26, 1:21 pm - Suresh Yadav: <Media omitted>
+15/04/26, 1:33 pm - Anjali Verma: Sorry sir, corrected. Revised invoice attached
+15/04/26, 1:34 pm - Anjali Verma: INV_2327_rev.pdf (file attached)
+15/04/26, 2:28 pm - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+15/04/26, 3:57 pm - Rakesh Sharma: Approved INV_2327
+15/04/26, 4:08 pm - Anjali Verma: Suresh Arora ji ka dispatch ready karo, transporter ko call karo
+15/04/26, 5:24 pm - Anjali Verma: Jain ji ka payment aa gaya - Rs 90,000 (cheque)
+15/04/26, 5:29 pm - Suresh Yadav: Transporter kal subah aayega
+15/04/26, 6:39 pm - Rakesh Sharma: Arora Supermart ka order aaya hai - 15 cartons Basmati rice 25kg. PO attached
+15/04/26, 6:40 pm - Rakesh Sharma: PO_Arora_1504.pdf (file attached)
+16/04/26, 9:11 am - Anjali Verma: Suresh Basmati rice 25kg kitna stock hai? Arora ji ko 15 chahiye
+16/04/26, 11:16 am - Rakesh Sharma: Suresh any update?
+16/04/26, 1:07 pm - Rakesh Sharma: Agarwal ji ka payment aaya kya? kab tak aayega
+16/04/26, 1:21 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+16/04/26, 2:16 pm - Suresh Yadav: 10 cartons hai madam
+16/04/26, 2:40 pm - Anjali Verma: Sir Arora ji ke liye sirf 10 hai. Partial dispatch karein?
+16/04/26, 3:54 pm - Rakesh Sharma: Haan Arora ji ko 10 bhej do, baaki next week
+16/04/26, 4:37 pm - Anjali Verma: Invoice INV_2328 ready - Arora ji, 10 cartons @ Rs 2100. Approval please
+16/04/26, 4:38 pm - Anjali Verma: INV_2328.pdf (file attached)
+16/04/26, 6:02 pm - Suresh Yadav: Arora ji ka dispatch ho gaya. LR attached
+16/04/26, 6:03 pm - Suresh Yadav: <Media omitted>
+16/04/26, 6:34 pm - Anjali Verma: LR number Tally mein update kar diya, Arora ji ko bata diya
+17/04/26, 9:42 am - Anjali Verma: Gentle reminder sir, INV_2328 approval pending
+17/04/26, 12:09 pm - Rakesh Sharma: INV_2328 approved. Dispatch karo
+17/04/26, 12:31 pm - Anjali Verma: Suresh Arora ji ka dispatch ready karo, transporter ko call karo
+17/04/26, 1:28 pm - Suresh Yadav: Transporter kal subah aayega
+18/04/26, 10:31 am - Rakesh Sharma: Arora Supermart ka order aaya hai - 10 cartons Atta 10kg. PO attached
+18/04/26, 10:47 am - Anjali Verma: Received sir. Stock check karti hoon
+18/04/26, 10:59 am - Anjali Verma: Suresh Atta 10kg kitna stock hai? Arora ji ko 10 chahiye
+18/04/26, 11:24 am - Suresh Yadav: Arora ji ka dispatch ho gaya. LR attached
+18/04/26, 11:25 am - Suresh Yadav: <Media omitted>
+18/04/26, 12:53 pm - Anjali Verma: LR number Tally mein update kar diya, Arora ji ko bata diya
+18/04/26, 1:07 pm - Anjali Verma: Suresh jaldi batao, customer wait kar rahe hain
+18/04/26, 2:48 pm - Anjali Verma: Bansal ji ka payment aa gaya - Rs 29,000 (NEFT)
+18/04/26, 3:22 pm - Suresh Yadav: 5 cartons hai madam
+18/04/26, 3:30 pm - Anjali Verma: Sir Arora ji ke liye sirf 5 hai. Partial dispatch karein?
+18/04/26, 6:36 pm - Rakesh Sharma: Haan Arora ji ko 5 bhej do, baaki next week
+20/04/26, 9:16 am - Anjali Verma: Invoice INV_2329 ready - Arora ji, 5 cartons @ Rs 420. Approval please
+20/04/26, 9:17 am - Anjali Verma: INV_2329.pdf (file attached)
+20/04/26, 11:36 am - Rakesh Sharma: Gupta Stores ka order aaya hai - 10 cartons Basmati rice 25kg. PO attached
+20/04/26, 11:50 am - Rakesh Sharma: INV_2329 approved. Dispatch karo
+20/04/26, 12:05 pm - Anjali Verma: Received sir. Stock check karti hoon
+20/04/26, 12:09 pm - Anjali Verma: Suresh Basmati rice 25kg kitna stock hai? Gupta ji ko 10 chahiye
+20/04/26, 12:14 pm - Anjali Verma: Suresh Arora ji ka dispatch ready karo, transporter ko call karo
+20/04/26, 1:07 pm - Suresh Yadav: 10 cartons hai madam
+20/04/26, 1:53 pm - Anjali Verma: Invoice INV_2330 ready - Gupta ji, 10 cartons @ Rs 2100. Approval please
+20/04/26, 1:54 pm - Anjali Verma: INV_2330.pdf (file attached)
+20/04/26, 2:02 pm - Suresh Yadav: Transporter kal subah aayega
+20/04/26, 2:42 pm - Anjali Verma: Singh ji ka payment aa gaya - Rs 22,500 (NEFT)
+20/04/26, 3:52 pm - Rakesh Sharma: Approved INV_2330
+20/04/26, 4:20 pm - Anjali Verma: Agarwal ji ka payment aa gaya - Rs 56,250 (NEFT)
+20/04/26, 4:20 pm - Anjali Verma: Suresh Gupta ji ka dispatch ready karo, transporter ko call karo
+20/04/26, 6:36 pm - Suresh Yadav: Transporter shaam ko aayega
+21/04/26, 12:34 pm - Suresh Yadav: Arora ji ka dispatch ho gaya. LR attached
+21/04/26, 12:35 pm - Suresh Yadav: <Media omitted>
+21/04/26, 12:52 pm - Anjali Verma: Jain ji ka payment aa gaya - Rs 8,400 (cheque)
+21/04/26, 1:05 pm - Suresh Yadav: Gupta ji ka dispatch ho gaya. LR attached
+21/04/26, 1:06 pm - Suresh Yadav: <Media omitted>
+21/04/26, 1:50 pm - Anjali Verma: LR number Tally mein update kar diya, Arora ji ko bata diya
+21/04/26, 2:25 pm - Anjali Verma: LR number Tally mein update kar diya, Gupta ji ko bata diya
+22/04/26, 9:29 am - Rakesh Sharma: Jain Provision ka order aaya hai - 10 cartons Basmati rice 25kg. PO attached
+22/04/26, 9:30 am - Rakesh Sharma: PO_Jain_2204.pdf (file attached)
+22/04/26, 9:41 am - Rakesh Sharma: Arora ji ka payment aaya kya? kab tak aayega
+22/04/26, 9:41 am - Anjali Verma: Received sir. Stock check karti hoon
+22/04/26, 9:46 am - Anjali Verma: Suresh Basmati rice 25kg kitna stock hai? Jain ji ko 10 chahiye
+22/04/26, 11:03 am - Suresh Yadav: 5 cartons hai madam
+22/04/26, 11:24 am - Anjali Verma: Sir Jain ji ke liye sirf 5 hai. Partial dispatch karein?
+22/04/26, 11:41 am - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+22/04/26, 3:58 pm - Anjali Verma: Bansal ji ka payment aa gaya - Rs 8,400 (UPI)
+22/04/26, 3:59 pm - Rakesh Sharma: Haan Jain ji ko 5 bhej do, baaki next week
+22/04/26, 5:20 pm - Anjali Verma: Invoice INV_2331 ready - Jain ji, 5 cartons @ Rs 2090. Approval please
+22/04/26, 5:21 pm - Anjali Verma: INV_2331.pdf (file attached)
+23/04/26, 10:23 am - Anjali Verma: Gentle reminder sir, INV_2331 approval pending
+23/04/26, 11:21 am - Rakesh Sharma: Rate galat hai, 2100 tha 2090 nahi. Correct karo
+23/04/26, 11:36 am - Anjali Verma: Sorry sir, corrected. Revised invoice attached
+23/04/26, 11:37 am - Anjali Verma: INV_2331_rev.pdf (file attached)
+23/04/26, 1:27 pm - Rakesh Sharma: Approved INV_2331
+23/04/26, 1:56 pm - Anjali Verma: Suresh Jain ji ka dispatch ready karo, transporter ko call karo
+23/04/26, 4:01 pm - Suresh Yadav: Transporter kal subah aayega
+23/04/26, 6:20 pm - Rakesh Sharma: Khanna Distributors ka order aaya hai - 30 cartons Sunflower oil 1L. PO attached
+23/04/26, 6:55 pm - Anjali Verma: Suresh Sunflower oil 1L kitna stock hai? Khanna ji ko 30 chahiye
+24/04/26, 9:38 am - Suresh Yadav: Jain ji ka dispatch ho gaya. LR attached
+24/04/26, 9:39 am - Suresh Yadav: <Media omitted>
+24/04/26, 10:37 am - Suresh Yadav: 30 cartons hai madam
+24/04/26, 10:56 am - Anjali Verma: LR number Tally mein update kar diya, Jain ji ko bata diya
+24/04/26, 11:15 am - Anjali Verma: Invoice INV_2332 ready - Khanna ji, 30 cartons @ Rs 1450. Approval please
+24/04/26, 11:16 am - Anjali Verma: INV_2332.pdf (file attached)
+24/04/26, 2:22 pm - Anjali Verma: Gentle reminder sir, INV_2332 approval pending
+24/04/26, 5:35 pm - Rakesh Sharma: INV_2332 approved. Dispatch karo
+24/04/26, 5:49 pm - Anjali Verma: Suresh Khanna ji ka dispatch ready karo, transporter ko call karo
+25/04/26, 9:46 am - Suresh Yadav: Transporter kal subah aayega
+25/04/26, 10:09 am - Anjali Verma: Arora ji ka payment aa gaya - Rs 52,500 (NEFT)
+25/04/26, 11:11 am - Suresh Yadav: Khanna ji ka dispatch ho gaya. LR attached
+25/04/26, 11:12 am - Suresh Yadav: <Media omitted>
+25/04/26, 12:07 pm - Anjali Verma: LR number Tally mein update kar diya, Khanna ji ko bata diya
+25/04/26, 4:44 pm - Rakesh Sharma: Singh ji ka payment aaya kya? kab tak aayega
+25/04/26, 6:07 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
+27/04/26, 1:26 pm - Anjali Verma: Arora ji ka payment aa gaya - Rs 21,000 (UPI)
+27/04/26, 3:42 pm - Rakesh Sharma: Jain ji ka payment aaya kya? kab tak aayega
+27/04/26, 5:33 pm - Anjali Verma: Nahi sir, abhi tak nahi aaya. Reminder bhej diya
