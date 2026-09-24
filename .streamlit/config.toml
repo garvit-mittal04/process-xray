@@ -14,3 +14,9 @@ textColor = "#1D2B3A"
 
 [browser]
 gatherUsageStats = false
+
+[theme.sidebar]
+backgroundColor = "#8E2A22"
+secondaryBackgroundColor = "#7A231C"
+textColor = "#FBEFD9"
+primaryColor = "#F2B233"

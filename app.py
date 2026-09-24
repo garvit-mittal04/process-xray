@@ -54,6 +54,7 @@ CSS = """
 :root {
   --paper: #F3F5F1; --paper-2: #E9EEE8; --rule: #D6DED6; --ink: #1D2B3A;
   --muted: #66756E; --red: #A3342B; --green: #0F6E56; --ochre: #9A6A12;
+  --cover: #8E2A22; --marigold: #F2B233; --marigold-soft: #FCEFD2; --indigo: #2F3A8F;
 }
 html, body, .stApp, p, li, label, h1, h2, h3, button, input, textarea, [data-testid="stMarkdownContainer"] {
   font-family: 'Mukta', system-ui, sans-serif !important;
@@ -132,16 +133,50 @@ p, li { line-height: 1.6; }
 /* Pull quote for the main insight */
 .px-quote { border-left: 3px solid var(--red); padding: .2rem 0 .2rem 1rem; font-size: 1.15rem; line-height: 1.5; margin: .4rem 0 1.2rem; max-width: 70ch; }
 
+/* The khata's red cloth cover: sidebar, with marigold lettering */
+[data-testid="stSidebar"] { background: linear-gradient(180deg, #8E2A22 0%, #7A231C 100%); border-right: 0; }
+[data-testid="stSidebar"] .px-mark { color: var(--marigold) !important; }
+[data-testid="stSidebar"] hr { border-color: rgba(251, 239, 217, .25); }
+[data-testid="stSidebar"] strong { color: var(--marigold); }
+
+/* Marigold underline on the key word of each page title */
+.px-title mark { background: none; color: inherit; box-shadow: inset 0 -0.28em 0 var(--marigold); padding: 0 .05em; }
+
+/* A thin marigold band across the top of the hero, like a garland on the ledger */
+.px-ledger.hero { border-top: 4px solid var(--marigold); }
+
+/* Each headline fact has its own colour */
+.px-fact { border-top: 3px solid transparent; }
+.px-fact:nth-child(1) { border-top-color: var(--green); }
+.px-fact:nth-child(1) strong { color: var(--green); }
+.px-fact:nth-child(2) { border-top-color: var(--marigold); }
+.px-fact:nth-child(2) strong { color: #9A6A12; }
+.px-fact:nth-child(3) { border-top-color: var(--indigo); }
+.px-fact:nth-child(3) strong { color: var(--indigo); }
+
+/* Treatment tags on recommendations */
+.px-tag { display: inline-block; padding: .05rem .55rem; border-radius: 3px; font-size: .82rem; font-weight: 600;
+  margin-right: .5rem; border: 1px solid currentColor; }
+.px-tag.eliminate { color: #7C241D; background: #FBE9E7; }
+.px-tag.simplify { color: #6E4B0C; background: var(--marigold-soft); }
+.px-tag.integrate { color: var(--indigo); background: #E8EAF7; }
+.px-tag.automate_rules { color: #0B5642; background: #DCEFE7; }
+.px-tag.automate_ai { color: #5B2A86; background: #EFE6F7; }
+
+/* Summary quote on a marigold wash */
+.px-quote { background: var(--marigold-soft); border-left-color: var(--red); padding: .8rem 1rem; border-radius: 0 3px 3px 0; }
+
 /* Streamlit widgets in the ledger palette */
 .stTabs [data-baseweb="tab-list"] { gap: 1.4rem; border-bottom: 1px solid var(--rule); }
 .stTabs [data-baseweb="tab"] { font-size: 1rem; padding: .4rem 0; }
 .stTabs [aria-selected="true"] { color: var(--green) !important; }
-.stTabs [data-baseweb="tab-highlight"] { background: var(--green); }
+.stTabs [data-baseweb="tab-highlight"] { background-color: var(--marigold) !important; height: 3px !important; }
 .stButton button[kind="primary"], .stDownloadButton button {
   border-radius: 4px; font-weight: 600;
 }
-.stDownloadButton button { background: var(--ink); color: #fff; border: 0; }
-.stDownloadButton button:hover { background: var(--green); color: #fff; }
+.stDownloadButton button { background: var(--marigold); color: var(--ink); border: 0; }
+.stDownloadButton button:hover { background: #E09E14; color: var(--ink); }
+.stDownloadButton button p { font-weight: 700; }
 [data-testid="stExpander"] details { border: 1px solid var(--rule); border-radius: 3px; background: #FBFCFA; }
 button:focus-visible, input:focus-visible { outline: 2px solid var(--green) !important; outline-offset: 2px; }
 
@@ -203,8 +238,8 @@ def render_mermaid(code: str) -> None:
   import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
   mermaid.initialize({{ startOnLoad: true, securityLevel: "strict", theme: "base",
     flowchart: {{ useMaxWidth: false, nodeSpacing: 30, rankSpacing: 40 }},
-    themeVariables: {{ primaryColor: "#FBFCFA", primaryBorderColor: "#1D2B3A", primaryTextColor: "#1D2B3A",
-                       lineColor: "#A3342B", fontFamily: "sans-serif" }} }});
+    themeVariables: {{ primaryColor: "#FCEFD2", primaryTextColor: "#1D2B3A",
+                       lineColor: "#A3342B", primaryBorderColor: "#8E2A22", fontFamily: "sans-serif" }} }});
 </script></body></html>"""
     # A left-to-right chart is one or two rows tall; branches (decisions) need a little more room
     rows = 1 + len(re.findall(r"\{[^}]*\}", code))
@@ -239,7 +274,7 @@ def render_hero(r: Report) -> None:
 
     gain = head.avg_hours_before - head.avg_hours_after
     html_block(f"""
-<div class="px-ledger" role="figure" aria-label="Order journey today versus with automations">
+<div class="px-ledger hero" role="figure" aria-label="Order journey today versus with automations">
   <p class="px-hero-line">Orders reach “{e(head.step_name)}” <b>{gain:.1f} working hours sooner</b>
      with the recommended automations.</p>
   <div class="px-lane"><div class="px-lane-name">Today<small>as it really happened</small></div>
@@ -296,7 +331,7 @@ def render_report(r: Report, key: str) -> None:
 <div class="px-entry">
   <div class="px-rank">{item.rank}</div>
   <h3>{e(rec.title)}</h3>
-  <span class="px-verdict {cls}">{verdict}</span><span class="px-conf">Confidence <i>{dots}</i></span>
+  <span class="px-tag {rec.treatment}">{LABELS[rec.treatment]}</span><span class="px-verdict {cls}">{verdict}</span><span class="px-conf">Confidence <i>{dots}</i></span>
   <p style="margin:.6rem 0 0;max-width:75ch">{e(rec.what_it_does)}</p>
   <div class="px-numbers">
     <div><b>{rec.waiting_removed_per_week:g} h/week</b>waiting removed</div>
@@ -601,7 +636,7 @@ if mode == "Example business":
             f"messages over two months" if demo else "Example report")
     html_block(f"""
 <div class="px-mast"><span class="px-mark">Process X-Ray</span><span class="px-mast-note">{e(note)}</span></div>
-<div class="px-title">See how your business really runs, from its WhatsApp group</div>
+<div class="px-title">See how your business <mark>really runs</mark>, from its WhatsApp group</div>
 <div class="px-lede">AI agents rebuild the process from the chat, find where time is lost,
 propose automations, challenge them, and replay your real history to show what would have changed.</div>""")
     if demo:
@@ -612,7 +647,7 @@ propose automations, challenge them, and replay your real history to show what w
 else:
     html_block("""
 <div class="px-mast"><span class="px-mark">Process X-Ray</span><span class="px-mast-note">Your own chat</span></div>
-<div class="px-title">Find out where your orders wait</div>
+<div class="px-title">Find out where your orders <mark>wait</mark></div>
 <div class="px-lede">Upload the WhatsApp group your team uses for orders or requests. You'll get the
 process as it really runs, what to automate first, and proof from your own history.</div>""")
     upload_flow()
