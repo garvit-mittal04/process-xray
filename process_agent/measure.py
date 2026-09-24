@@ -105,3 +105,29 @@ def measure_steps(pmap: ProcessMap, digest: ChatDigest) -> ProcessMap:
     for p in pmap.pain_points:
         p.message_ids = sorted({i for i in p.message_ids if 0 <= i < len(msgs)})
     return pmap
+
+
+def measure_from_events(pmap: ProcessMap, log, digest: ChatDigest) -> ProcessMap:
+    """Measure frequency and waits from the event log, which traces every case.
+    Steps the event log never saw keep the Mapper-based estimate (marked assumed)."""
+    msgs = digest.messages
+    start, end = digest.date_range
+    weeks = max((end - start).days / 7, 1.0)
+    counts: dict[str, int] = {}
+    waits: dict[str, list[float]] = {}
+    for case in log.cases:
+        times = [msgs[e.message_id].timestamp for e in case.events]
+        for i, e in enumerate(case.events):
+            counts[e.step_id] = counts.get(e.step_id, 0) + 1
+            if i:
+                waits.setdefault(e.step_id, []).append(working_hours_between(times[i - 1], times[i]))
+    for step in pmap.steps:
+        if counts.get(step.id):
+            step.frequency_per_week = round(counts[step.id] / weeks, 2)
+            w = waits.get(step.id)
+            step.wait_before_hours = 0.0 if step.starts_on_external_event or not w \
+                else round(statistics.median(w), 1)
+            step.assumed_fields = ["minutes_per_run"]
+        elif "frequency_per_week" not in step.assumed_fields:
+            step.assumed_fields = sorted(set(step.assumed_fields) | {"frequency_per_week", "wait_before_hours"})
+    return pmap

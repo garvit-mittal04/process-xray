@@ -1,0 +1,16 @@
+[server]
+maxUploadSize = 20          # MB; WhatsApp text exports are usually well under 5 MB
+headless = true
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
+primaryColor = "#0F6E56"
+backgroundColor = "#F3F5F1"
+secondaryBackgroundColor = "#E9EEE8"
+textColor = "#1D2B3A"
+
+[browser]
+gatherUsageStats = false

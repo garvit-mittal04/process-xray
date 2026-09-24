@@ -83,7 +83,13 @@ Return JSON: {"recommendations": [ {
       stock is confirmed within 0.5 h; auto-approval below a limit means approval
       within 0.2 h). Only include steps whose timing the automation truly controls;
       never for steps that depend on customers, transporters or physical work.
-} ]}"""
+} ]}
+
+In "title", "what_it_does", "how_it_works" and "human_in_the_loop", write natural
+sentences for a business owner. Describe what happens, e.g. "Invoices are drafted
+in Tally as soon as an order is confirmed", not "For Create invoice in Tally, ...".
+Never mention step ids like "S5", and do not state hours or money figures; the app
+calculates those."""
 
 
 def _format(analysis: Analysis) -> str:

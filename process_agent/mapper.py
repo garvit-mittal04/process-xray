@@ -84,7 +84,10 @@ dispatch instructions separate from the physical dispatch.
 Do not invent steps that the chat does not show."""
 
 
-def format_transcript(d: ChatDigest) -> str:
+MAPPER_SAMPLE = 250   # messages; enough to learn the process structure
+
+
+def format_transcript(d: ChatDigest, limit: int | None = None) -> str:
     start, end = d.date_range
     days = max((end - start).days, 1)
     lines = [
@@ -94,12 +97,15 @@ def format_transcript(d: ChatDigest) -> str:
         "",
         "Transcript:",
     ]
-    for i, m in enumerate(d.messages):
+    msgs = d.messages if limit is None else d.messages[:limit]
+    if limit is not None and len(d.messages) > limit:
+        lines.insert(-1, f"(Showing the first {limit} of {len(d.messages)} messages; the rest follow the same process.)")
+    for i, m in enumerate(msgs):
         text = m.text.replace("\n", " / ")
         lines.append(f"#{i} [{m.timestamp:%a %d %b %H:%M}] {m.sender}: {text}")
     return "\n".join(lines)
 
 
 def map_process(digest: ChatDigest) -> ProcessMap:
-    prompt = INSTRUCTIONS + "\n\n" + format_transcript(digest)
+    prompt = INSTRUCTIONS + "\n\n" + format_transcript(digest, limit=MAPPER_SAMPLE)
     return generate_json(SYSTEM, prompt, ProcessMap)

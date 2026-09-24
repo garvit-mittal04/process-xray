@@ -87,7 +87,12 @@ For each step give "reason" (one sentence, grounded in this chat) and "idea"
 
 Return JSON: {"steps": [{"id", "repetitiveness", "rule_clarity", "data_structure",
 "error_risk", "treatment", "reason", "idea"}, ...], "top_insight": "2 sentences
-on the single biggest opportunity"}. Include every step id exactly once."""
+on the single biggest opportunity"}. Include every step id exactly once.
+
+In "reason", "idea" and "top_insight", refer to steps by name (e.g. "invoice
+approval"), never by id (e.g. "S5"), because business owners will read them.
+Do not state any number of hours, money or percentages that is not given in the
+step data above; describe the benefit in words instead."""
 
 
 def _bottleneck_score(wait_hours: float) -> int:

@@ -2,6 +2,7 @@
 
 The same Report is printed by xray.py, saved as JSON, and (later) loaded by the
 Streamlit app, so a saved report can power an instant demo with no AI calls."""
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Callable
@@ -9,11 +10,11 @@ from typing import Callable
 from pydantic import BaseModel
 
 from .analyst import Analysis, analyse
-from .chat_parser import build_digest, parse_whatsapp
+from .chat_parser import build_digest, parse_whatsapp, parse_whatsapp_text
 from .critic import RankedRecommendation, critique
 from .events import EventLog, extract_event_log
 from .mapper import ProcessMap, map_process
-from .measure import measure_steps
+from .measure import measure_from_events, measure_steps
 from .recommender import Plan, Settings, recommend, value
 from .replay import ReplayResult, replay
 
@@ -52,6 +53,35 @@ def _blocked_steps(pmap, analysis) -> set[str]:
     }
 
 
+def _plain_text(text: str, names: dict[str, str]) -> str:
+    """Owners read these texts, so step ids like "S3" become step names.
+    Ids in brackets are simply dropped: "the stock step (S3)" -> "the stock step"."""
+    text = re.sub(r"\s*\((?:\s*S\d+\s*(?:,|and|&|/)?)+\)", "", text)
+    def name(m):
+        n = names.get(f"S{m.group(1)}")
+        return n[0].lower() + n[1:] if n else m.group(0)   # keep proper nouns like Tally
+    return re.sub(r"\bS(\d+)\b", name, text)
+
+
+def _clean_ids(pmap, analysis, plan, ranking) -> None:
+    names = {s.id: s.name for s in pmap.steps}
+    fix = lambda t: _plain_text(t, names)
+    analysis.top_insight = fix(analysis.top_insight)
+    for s in analysis.steps:
+        s.reason, s.idea = fix(s.reason), fix(s.idea)
+    for p in pmap.pain_points:
+        p.description = fix(p.description)
+    pmap.summary = fix(pmap.summary)
+    for r in plan.recommendations:
+        r.title, r.what_it_does, r.human_in_the_loop = fix(r.title), fix(r.what_it_does), fix(r.human_in_the_loop)
+        r.how_it_works = [fix(x) for x in r.how_it_works]
+    for item in ranking:
+        c = item.critique
+        c.who_might_resist, c.change_needed = fix(c.who_might_resist), fix(c.change_needed)
+        for risk in c.risks:
+            risk.risk, risk.mitigation = fix(risk.risk), fix(risk.mitigation)
+
+
 def _rules(recs) -> dict[str, float]:
     rules: dict[str, float] = {}
     for r in recs:
@@ -60,17 +90,24 @@ def _rules(recs) -> dict[str, float]:
     return rules
 
 
-def run(chat_path: str | Path, day_first: bool = True, settings: Settings | None = None,
-        progress: Callable[[str], None] = print) -> Report:
-    name = Path(chat_path).stem
-    digest = build_digest(parse_whatsapp(chat_path, day_first=day_first), name)
+def run(chat_path: str | Path | None = None, day_first: bool = True, settings: Settings | None = None,
+        progress: Callable[[str], None] = print, text: str | None = None,
+        name: str = "uploaded_chat") -> Report:
+    """Run every agent on a chat file (chat_path) or on uploaded text (text)."""
+    if text is not None:
+        messages = parse_whatsapp_text(text, day_first=day_first)
+    else:
+        messages = parse_whatsapp(chat_path, day_first=day_first)
+        name = Path(chat_path).stem
+    digest = build_digest(messages, name)
 
     progress("[1/5] Mapper agent is reconstructing the process...")
     pmap = measure_steps(map_process(digest), digest)
-    progress("[2/5] Analyst agent is scoring every step...")
-    analysis = analyse(pmap)
-    progress("[3/5] Event-log agent is tracing every order through the chat...")
+    progress("[2/5] Event-log agent is tracing every case through the chat...")
     log = extract_event_log(pmap, digest, progress)
+    pmap = measure_from_events(pmap, log, digest)
+    progress("[3/5] Analyst agent is scoring every step...")
+    analysis = analyse(pmap)
     progress("[4/5] Recommender agent is designing automations and replaying history...")
     plan = recommend(analysis, settings)
     blocked = _blocked_steps(pmap, analysis)
@@ -81,6 +118,7 @@ def run(chat_path: str | Path, day_first: bool = True, settings: Settings | None
     progress("[5/5] Devil's advocate is stress-testing each idea...")
     ranking = critique(plan)
 
+    _clean_ids(pmap, analysis, plan, ranking)
     keep = {x.recommendation_id for x in ranking if x.critique.verdict != "rethink"}
     combined = replay(log, digest, pmap, _rules(r for r in plan.recommendations if r.id in keep))
 

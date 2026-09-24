@@ -95,6 +95,7 @@ def extract_event_log(pmap: ProcessMap, digest: ChatDigest,
     msgs = digest.messages
     valid_steps = {s.id for s in pmap.steps}
     names = {s.id: s.name for s in pmap.steps}
+    order = {s.id: i for i, s in enumerate(pmap.steps)}
     cases: dict[str, Case] = {}
     hints: dict[str, str] = {}
 
@@ -125,8 +126,15 @@ def extract_event_log(pmap: ProcessMap, digest: ChatDigest,
             for e in events:
                 t = msgs[e.message_id].timestamp
                 same = [msgs[x.message_id].timestamp for x in case.events if x.step_id == e.step_id]
-                if all(abs((t - x).days) <= MAX_REPEAT_DAYS for x in same):
-                    case.events.append(e)
+                if not all(abs((t - x).days) <= MAX_REPEAT_DAYS for x in same):
+                    continue
+                # An early step (e.g. stock check) turning up a day after the case
+                # already reached a much later step belongs to a different case.
+                later = [msgs[x.message_id].timestamp for x in case.events
+                         if order.get(x.step_id, 0) >= order.get(e.step_id, 0) + 2]
+                if later and (t - min(later)).total_seconds() > 24 * 3600:
+                    continue
+                case.events.append(e)
             case.chaser_message_ids += chasers
 
     # Clean up: one event per message, in time order; drop cases with a single event

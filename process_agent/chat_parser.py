@@ -32,6 +32,17 @@ FOLLOW_UP = re.compile(
 
 DATE_FORMATS = ["%d/%m/%y", "%d/%m/%Y", "%m/%d/%y", "%m/%d/%Y"]
 
+# Business names mentioned inside messages ("Gupta Stores", "Mehta ji") belong to
+# customers and suppliers, not participants. They are masked as "Customer A",
+# "Customer B"... before anything is sent to an AI model.
+BUSINESS_SUFFIX = re.compile(
+    r"\b([A-Z][a-z]{2,})(?:\s[A-Z][a-z]+)?\s(?:ji|Ji|Stores?|Traders?|Mart|Retail|Kirana|"
+    r"Distributors?|Provisions?|Supermart|Enterprises|Industries|Agencies|Brothers|Sons|"
+    r"Pvt|Ltd|Co|Company|Foods|Textiles|Electricals|Hardware|Medicals?)\b"
+)
+NOT_NAMES = {"Sir", "Madam", "Bhai", "Haan", "Nahi", "Please", "Invoice", "Order", "Stock",
+             "Payment", "Dispatch", "Approved", "Sorry", "Theek", "Customer", "Person"}
+
 
 def _parse_datetime(date_str: str, time_str: str, day_first: bool) -> datetime:
     time_str = time_str.replace("\u202f", " ").replace(".", "").upper().strip()
@@ -55,10 +66,30 @@ def _redact(text: str, name_map: dict[str, str]) -> str:
     return text
 
 
-def parse_whatsapp(path: str | Path, day_first: bool = True) -> list[Message]:
-    """Read an exported chat and return redacted, pseudonymised messages."""
+def _mask_businesses(texts: list[str]) -> list[str]:
+    """Replace customer/supplier names with Customer A, B, ... consistently."""
+    names: dict[str, str] = {}
+    for t in texts:
+        for m in BUSINESS_SUFFIX.finditer(t):
+            first = m.group(1)
+            if first not in NOT_NAMES and first not in names:
+                names[first] = f"Customer {chr(65 + len(names) % 26)}{'' if len(names) < 26 else len(names) // 26}"
+    if not names:
+        return texts
+    # Match the name even inside file names like PO_Mehta_0303.pdf
+    pattern = re.compile(r"(?<![A-Za-z])(" + "|".join(map(re.escape, names)) + r")(?![a-z])")
+    return [pattern.sub(lambda m: names[m.group(1)], t) for t in texts]
+
+
+def parse_whatsapp(path: str | Path, day_first: bool = True, mask_customers: bool = True) -> list[Message]:
+    """Read an exported chat file and return redacted, pseudonymised messages."""
+    return parse_whatsapp_text(Path(path).read_text(encoding="utf-8"), day_first, mask_customers)
+
+
+def parse_whatsapp_text(content: str, day_first: bool = True, mask_customers: bool = True) -> list[Message]:
+    """Parse the text of an exported chat (nothing is written to disk)."""
     raw: list[tuple[datetime, str, str]] = []
-    for line in Path(path).read_text(encoding="utf-8").splitlines():
+    for line in content.splitlines():
         line = line.lstrip("\u200e\ufeff").rstrip()
         match = ANDROID.match(line) or IOS.match(line)
         if match:
@@ -80,14 +111,17 @@ def parse_whatsapp(path: str | Path, day_first: bool = True) -> list[Message]:
         if len(first) > 2 and not first.startswith("+") and first not in name_map:
             name_map[first] = alias
 
+    texts = [_redact(text, name_map) for _, _, text in raw]
+    if mask_customers:
+        texts = _mask_businesses(texts)
     return [
         Message(
             timestamp=ts,
             sender=name_map[sender],
-            text=_redact(text, name_map),
+            text=clean,
             has_attachment=bool(ATTACHMENT.search(text)),
         )
-        for ts, sender, text in raw
+        for (ts, sender, text), clean in zip(raw, texts)
     ]
 
 

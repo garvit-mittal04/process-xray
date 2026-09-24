@@ -1,0 +1,2248 @@
+{
+  "chat": {
+    "source_name": "sharma_traders_2months",
+    "total_messages": 536,
+    "start": "2026-03-02T09:30:00",
+    "end": "2026-04-27T17:33:00",
+    "participants": {
+      "Person 2": 271,
+      "Person 1": 134,
+      "Person 3": 131
+    },
+    "follow_up_count": 64,
+    "attachment_count": 94
+  },
+  "process_map": {
+    "process_name": "Order to Delivery & Invoicing",
+    "summary": "Customers send purchase orders via Person 1, triggering internal stock checks with Person 3 and invoice generation by Person 2. After Person 1 approves the invoice and transporter logistics are arranged, the goods are dispatched, LRs are collected, and Tally is updated while payment follow-ups are tracked continuously.",
+    "roles": {
+      "Person 1": "Business Owner / Manager",
+      "Person 2": "Office Staff / Accountant",
+      "Person 3": "Godown Incharge / Warehouse Staff"
+    },
+    "steps": [
+      {
+        "id": "S1",
+        "name": "Receive Customer Purchase Order",
+        "actor": "Person 1 (Business Owner / Manager)",
+        "system": "WhatsApp",
+        "input": "Customer Purchase Order PDF",
+        "output": "PO forwarded in group",
+        "minutes_per_run": 5.0,
+        "starts_on_external_event": true,
+        "timing_depends_on_outsiders": true,
+        "message_ids": [
+          0,
+          9,
+          24,
+          42,
+          54,
+          71,
+          84,
+          98,
+          121,
+          128,
+          150,
+          162,
+          177,
+          194,
+          214,
+          220,
+          235
+        ],
+        "frequency_per_week": 3.12,
+        "wait_before_hours": 0.0,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S2",
+        "name": "Check Inventory Stock",
+        "actor": "Person 2 (Office Staff / Accountant) & Person 3 (Godown Incharge)",
+        "system": "WhatsApp / Phone",
+        "input": "Required item quantity from PO",
+        "output": "Available stock quantity confirmation",
+        "minutes_per_run": 10.0,
+        "starts_on_external_event": false,
+        "timing_depends_on_outsiders": false,
+        "message_ids": [
+          3,
+          11,
+          28,
+          45,
+          58,
+          73,
+          87,
+          101,
+          124,
+          133,
+          152,
+          165,
+          179,
+          196,
+          215,
+          222,
+          237
+        ],
+        "frequency_per_week": 3.25,
+        "wait_before_hours": 4.8,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S3",
+        "name": "Determine Partial or Full Dispatch",
+        "actor": "Person 1 (Business Owner / Manager)",
+        "system": "WhatsApp",
+        "input": "Available stock vs ordered quantity",
+        "output": "Decision to dispatch available quantity",
+        "minutes_per_run": 5.0,
+        "starts_on_external_event": false,
+        "timing_depends_on_outsiders": false,
+        "message_ids": [
+          17,
+          32,
+          51,
+          80,
+          199,
+          230
+        ],
+        "frequency_per_week": 1.38,
+        "wait_before_hours": 3.2,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S4",
+        "name": "Create and Send Invoice for Approval",
+        "actor": "Person 2 (Office Staff / Accountant)",
+        "system": "WhatsApp / Tally",
+        "input": "Confirmed quantities and rates",
+        "output": "Invoice PDF sent for approval",
+        "minutes_per_run": 15.0,
+        "starts_on_external_event": false,
+        "timing_depends_on_outsiders": false,
+        "message_ids": [
+          5,
+          18,
+          33,
+          52,
+          68,
+          81,
+          96,
+          105,
+          131,
+          138,
+          157,
+          167,
+          186,
+          200,
+          218,
+          233
+        ],
+        "frequency_per_week": 2.88,
+        "wait_before_hours": 0.9,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S5",
+        "name": "Approve Invoice",
+        "actor": "Person 1 (Business Owner / Manager)",
+        "system": "WhatsApp",
+        "input": "Invoice PDF",
+        "output": "Approval confirmation",
+        "minutes_per_run": 5.0,
+        "starts_on_external_event": false,
+        "timing_depends_on_outsiders": false,
+        "message_ids": [
+          14,
+          26,
+          39,
+          59,
+          75,
+          92,
+          113,
+          135,
+          141,
+          159,
+          169,
+          191,
+          202,
+          243,
+          246
+        ],
+        "frequency_per_week": 2.75,
+        "wait_before_hours": 4.3,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S6",
+        "name": "Arrange Transporter and Prepare Dispatch",
+        "actor": "Person 2 (Office Staff) & Person 3 (Godown Incharge)",
+        "system": "WhatsApp / Phone",
+        "input": "Approved invoice / dispatch instruction",
+        "output": "Transporter scheduled",
+        "minutes_per_run": 10.0,
+        "starts_on_external_event": false,
+        "timing_depends_on_outsiders": true,
+        "message_ids": [
+          15,
+          27,
+          40,
+          60,
+          76,
+          93,
+          110,
+          114,
+          137,
+          142,
+          160,
+          170,
+          192,
+          203,
+          244,
+          247
+        ],
+        "frequency_per_week": 2.75,
+        "wait_before_hours": 0.3,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S7",
+        "name": "Physical Dispatch and LR Generation",
+        "actor": "Person 3 (Godown Incharge / Warehouse Staff)",
+        "system": "Godown visit / WhatsApp",
+        "input": "Packed goods and transporter pickup",
+        "output": "LR copy attached in chat",
+        "minutes_per_run": 30.0,
+        "starts_on_external_event": false,
+        "timing_depends_on_outsiders": true,
+        "message_ids": [
+          20,
+          36,
+          47,
+          64,
+          88,
+          108,
+          116,
+          119,
+          144,
+          147,
+          174,
+          180,
+          205,
+          208
+        ],
+        "frequency_per_week": 2.62,
+        "wait_before_hours": 6.0,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S8",
+        "name": "Update Tally and Notify Customer",
+        "actor": "Person 2 (Office Staff / Accountant)",
+        "system": "Tally / WhatsApp",
+        "input": "LR number and dispatch details",
+        "output": "Updated ledger and customer notification",
+        "minutes_per_run": 10.0,
+        "starts_on_external_event": false,
+        "timing_depends_on_outsiders": false,
+        "message_ids": [
+          22,
+          38,
+          50,
+          67,
+          90,
+          111,
+          118,
+          123,
+          146,
+          149,
+          176,
+          183,
+          207,
+          210,
+          249
+        ],
+        "frequency_per_week": 2.62,
+        "wait_before_hours": 0.7,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      },
+      {
+        "id": "S9",
+        "name": "Track and Receive Payments",
+        "actor": "Person 1 & Person 2",
+        "system": "WhatsApp / Bank",
+        "input": "Outstanding invoice details",
+        "output": "Payment confirmation / Follow-up reminder",
+        "minutes_per_run": 10.0,
+        "starts_on_external_event": true,
+        "timing_depends_on_outsiders": true,
+        "message_ids": [
+          102,
+          153,
+          154,
+          171,
+          173,
+          184,
+          211,
+          212,
+          213,
+          225,
+          228,
+          229,
+          231
+        ],
+        "frequency_per_week": 1.75,
+        "wait_before_hours": 0.0,
+        "assumed_fields": [
+          "minutes_per_run"
+        ]
+      }
+    ],
+    "pain_points": [
+      {
+        "kind": "waiting",
+        "description": "Invoice approvals take significant time, often requiring multiple gentle reminders from office staff.",
+        "step_ids": [
+          "S4",
+          "S5"
+        ],
+        "message_ids": [
+          7,
+          23,
+          57,
+          70,
+          83,
+          224,
+          241
+        ]
+      },
+      {
+        "kind": "waiting",
+        "description": "Dispatches are delayed waiting for transporter availability or scheduled pickup times.",
+        "step_ids": [
+          "S6",
+          "S7"
+        ],
+        "message_ids": [
+          16,
+          31,
+          63,
+          79,
+          94,
+          115,
+          140,
+          143,
+          161,
+          193,
+          204,
+          245,
+          248
+        ]
+      },
+      {
+        "kind": "rework",
+        "description": "Pricing errors in invoices require corrections and issuing revised invoices.",
+        "step_ids": [
+          "S4"
+        ],
+        "message_ids": [
+          188,
+          189,
+          190,
+          238,
+          239,
+          240
+        ]
+      },
+      {
+        "kind": "manual_chasing",
+        "description": "Continuous follow-ups are required to track pending customer payments.",
+        "step_ids": [
+          "S9"
+        ],
+        "message_ids": [
+          153,
+          154,
+          171,
+          173,
+          212,
+          213,
+          225,
+          228,
+          229,
+          231
+        ]
+      },
+      {
+        "kind": "manual_lookup",
+        "description": "Delays in checking stock levels from the godown stall order processing.",
+        "step_ids": [
+          "S2"
+        ],
+        "message_ids": [
+          74,
+          103,
+          125,
+          134
+        ]
+      }
+    ],
+    "mermaid": "flowchart TD\nS1[\"Receive Customer Purchase Order\"]\nS2[\"Check Inventory Stock\"]\nS3[\"Determine Partial or Full Dispatch\"]\nS4[\"Create and Send Invoice for Approval\"]\nS5[\"Approve Invoice\"]\nS6[\"Arrange Transporter and Prepare Dispatch\"]\nS7[\"Physical Dispatch and LR Generation\"]\nS8[\"Update Tally and Notify Customer\"]\nS9[\"Track and Receive Payments\"]\nS1 --> S2\nS2 --> S3\nS3 --> S4\nS4 --> S5\nS5 --> S6\nS6 --> S7\nS7 --> S8\nS8 --> S9"
+  },
+  "analysis": {
+    "process_name": "Order to Delivery & Invoicing",
+    "top_insight": "The biggest bottleneck is the multi-hour waiting gap caused by manual stock checks and invoice approvals. Integrating Tally live stock into your operational sheets and auto-approving standard orders will drastically cut down order-to-dispatch time.",
+    "steps": [
+      {
+        "id": "S1",
+        "name": "Receive Customer Purchase Order",
+        "actor": "Person 1 (Business Owner / Manager)",
+        "system": "WhatsApp",
+        "frequency_per_week": 3.12,
+        "minutes_per_run": 5.0,
+        "wait_before_hours": 0.0,
+        "hands_on_hours_per_week": 0.26,
+        "waiting_hours_per_week": 0.0,
+        "bottleneck": 1,
+        "repetitiveness": 3,
+        "rule_clarity": 1,
+        "data_structure": 1,
+        "error_risk": 2,
+        "potential": 1.6,
+        "treatment": "automate_ai",
+        "reason": "Customer POs arrive as unstructured WhatsApp PDFs that need reading and manual forwarding.",
+        "idea": "Use an affordable AI parser to extract PO text and automatically drop it into a shared Google Sheet.",
+        "message_ids": [
+          0,
+          9,
+          24,
+          42,
+          54,
+          71,
+          84,
+          98,
+          121,
+          128,
+          150,
+          162,
+          177,
+          194,
+          214,
+          220,
+          235
+        ]
+      },
+      {
+        "id": "S2",
+        "name": "Check Inventory Stock",
+        "actor": "Person 2 (Office Staff / Accountant) & Person 3 (Godown Incharge)",
+        "system": "WhatsApp / Phone",
+        "frequency_per_week": 3.25,
+        "minutes_per_run": 10.0,
+        "wait_before_hours": 4.8,
+        "hands_on_hours_per_week": 0.54,
+        "waiting_hours_per_week": 15.6,
+        "bottleneck": 3,
+        "repetitiveness": 4,
+        "rule_clarity": 5,
+        "data_structure": 5,
+        "error_risk": 3,
+        "potential": 4.0,
+        "treatment": "integrate",
+        "reason": "Staff waste hours waiting and manually checking physical stock against digital orders.",
+        "idea": "Connect your Tally inventory directly to a shared Google Sheet so staff see live stock instantly without calling.",
+        "message_ids": [
+          3,
+          11,
+          28,
+          45,
+          58,
+          73,
+          87,
+          101,
+          124,
+          133,
+          152,
+          165,
+          179,
+          196,
+          215,
+          222,
+          237
+        ]
+      },
+      {
+        "id": "S3",
+        "name": "Determine Partial or Full Dispatch",
+        "actor": "Person 1 (Business Owner / Manager)",
+        "system": "WhatsApp",
+        "frequency_per_week": 1.38,
+        "minutes_per_run": 5.0,
+        "wait_before_hours": 3.2,
+        "hands_on_hours_per_week": 0.11,
+        "waiting_hours_per_week": 4.4,
+        "bottleneck": 2,
+        "repetitiveness": 2,
+        "rule_clarity": 2,
+        "data_structure": 3,
+        "error_risk": 3,
+        "potential": 2.4,
+        "treatment": "keep_human",
+        "reason": "Deciding whether to hold out for full stock or ship partial quantities requires business owner judgement.",
+        "idea": "Keep the owner decision, but notify them instantly via WhatsApp summary when stock is short.",
+        "message_ids": [
+          17,
+          32,
+          51,
+          80,
+          199,
+          230
+        ]
+      },
+      {
+        "id": "S4",
+        "name": "Create and Send Invoice for Approval",
+        "actor": "Person 2 (Office Staff / Accountant)",
+        "system": "WhatsApp / Tally",
+        "frequency_per_week": 2.88,
+        "minutes_per_run": 15.0,
+        "wait_before_hours": 0.9,
+        "hands_on_hours_per_week": 0.72,
+        "waiting_hours_per_week": 2.6,
+        "bottleneck": 1,
+        "repetitiveness": 4,
+        "rule_clarity": 4,
+        "data_structure": 5,
+        "error_risk": 4,
+        "potential": 3.6,
+        "treatment": "integrate",
+        "reason": "Manual data entry between confirmed sheets and Tally creates pricing errors and rework.",
+        "idea": "Use a simple desktop automation or Tally connector to generate draft invoices automatically from approved quantities.",
+        "message_ids": [
+          5,
+          18,
+          33,
+          52,
+          68,
+          81,
+          96,
+          105,
+          131,
+          138,
+          157,
+          167,
+          186,
+          200,
+          218,
+          233
+        ]
+      },
+      {
+        "id": "S5",
+        "name": "Approve Invoice",
+        "actor": "Person 1 (Business Owner / Manager)",
+        "system": "WhatsApp",
+        "frequency_per_week": 2.75,
+        "minutes_per_run": 5.0,
+        "wait_before_hours": 4.3,
+        "hands_on_hours_per_week": 0.23,
+        "waiting_hours_per_week": 11.8,
+        "bottleneck": 3,
+        "repetitiveness": 3,
+        "rule_clarity": 2,
+        "data_structure": 3,
+        "error_risk": 2,
+        "potential": 2.6,
+        "treatment": "simplify",
+        "reason": "Invoice approvals sit waiting for the owner, stalling the dispatch pipeline unnecessarily.",
+        "idea": "Implement an auto-approval rule in your workflow for trusted repeat customers below a set credit limit.",
+        "message_ids": [
+          14,
+          26,
+          39,
+          59,
+          75,
+          92,
+          113,
+          135,
+          141,
+          159,
+          169,
+          191,
+          202,
+          243,
+          246
+        ]
+      },
+      {
+        "id": "S6",
+        "name": "Arrange Transporter and Prepare Dispatch",
+        "actor": "Person 2 (Office Staff) & Person 3 (Godown Incharge)",
+        "system": "WhatsApp / Phone",
+        "frequency_per_week": 2.75,
+        "minutes_per_run": 10.0,
+        "wait_before_hours": 0.3,
+        "hands_on_hours_per_week": 0.46,
+        "waiting_hours_per_week": 0.8,
+        "bottleneck": 1,
+        "repetitiveness": 3,
+        "rule_clarity": 2,
+        "data_structure": 1,
+        "error_risk": 3,
+        "potential": 2.0,
+        "treatment": "keep_human",
+        "reason": "Arranging transporters involves variable local negotiations and physical logistics that cannot be fully rule-based.",
+        "idea": "Maintain standard transporter contact lists in a shared sheet for quick phone booking by staff.",
+        "message_ids": [
+          15,
+          27,
+          40,
+          60,
+          76,
+          93,
+          110,
+          114,
+          137,
+          142,
+          160,
+          170,
+          192,
+          203,
+          244,
+          247
+        ]
+      },
+      {
+        "id": "S7",
+        "name": "Physical Dispatch and LR Generation",
+        "actor": "Person 3 (Godown Incharge / Warehouse Staff)",
+        "system": "Godown visit / WhatsApp",
+        "frequency_per_week": 2.62,
+        "minutes_per_run": 30.0,
+        "wait_before_hours": 6.0,
+        "hands_on_hours_per_week": 1.31,
+        "waiting_hours_per_week": 15.7,
+        "bottleneck": 3,
+        "repetitiveness": 3,
+        "rule_clarity": 1,
+        "data_structure": 1,
+        "error_risk": 3,
+        "potential": 2.2,
+        "treatment": "keep_human",
+        "reason": "Physical loading and LR collection at the godown are manual warehouse operations.",
+        "idea": "Have the warehouse staff snap a photo of the LR and drop it into a dedicated WhatsApp group immediately.",
+        "message_ids": [
+          20,
+          36,
+          47,
+          64,
+          88,
+          108,
+          116,
+          119,
+          144,
+          147,
+          174,
+          180,
+          205,
+          208
+        ]
+      },
+      {
+        "id": "S8",
+        "name": "Update Tally and Notify Customer",
+        "actor": "Person 2 (Office Staff / Accountant)",
+        "system": "Tally / WhatsApp",
+        "frequency_per_week": 2.62,
+        "minutes_per_run": 10.0,
+        "wait_before_hours": 0.7,
+        "hands_on_hours_per_week": 0.44,
+        "waiting_hours_per_week": 1.8,
+        "bottleneck": 1,
+        "repetitiveness": 4,
+        "rule_clarity": 5,
+        "data_structure": 4,
+        "error_risk": 3,
+        "potential": 3.4,
+        "treatment": "automate_rules",
+        "reason": "Updating Tally and notifying the customer are repetitive administrative tasks done after LR collection.",
+        "idea": "Use a Make/Zapier workflow to automatically trigger a WhatsApp template notifying the customer once the LR is attached.",
+        "message_ids": [
+          22,
+          38,
+          50,
+          67,
+          90,
+          111,
+          118,
+          123,
+          146,
+          149,
+          176,
+          183,
+          207,
+          210,
+          249
+        ]
+      },
+      {
+        "id": "S9",
+        "name": "Track and Receive Payments",
+        "actor": "Person 1 & Person 2",
+        "system": "WhatsApp / Bank",
+        "frequency_per_week": 1.75,
+        "minutes_per_run": 10.0,
+        "wait_before_hours": 0.0,
+        "hands_on_hours_per_week": 0.29,
+        "waiting_hours_per_week": 0.0,
+        "bottleneck": 1,
+        "repetitiveness": 3,
+        "rule_clarity": 2,
+        "data_structure": 3,
+        "error_risk": 4,
+        "potential": 2.6,
+        "treatment": "automate_rules",
+        "reason": "Manual payment follow-ups take continuous effort and often miss aging invoice deadlines.",
+        "idea": "Set up automated WhatsApp payment reminder alerts using Tally due-date data via a no-code tool.",
+        "message_ids": [
+          102,
+          153,
+          154,
+          171,
+          173,
+          184,
+          211,
+          212,
+          213,
+          225,
+          228,
+          229,
+          231
+        ]
+      }
+    ],
+    "total_hands_on_hours_per_week": 4.4,
+    "total_waiting_hours_per_week": 52.7
+  },
+  "event_log": {
+    "cases": [
+      {
+        "case_id": "C1",
+        "label": "Case 1 (started 02 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 0
+          },
+          {
+            "step_id": "S2",
+            "message_id": 4
+          },
+          {
+            "step_id": "S4",
+            "message_id": 5
+          },
+          {
+            "step_id": "S5",
+            "message_id": 14
+          },
+          {
+            "step_id": "S6",
+            "message_id": 15
+          },
+          {
+            "step_id": "S7",
+            "message_id": 20
+          },
+          {
+            "step_id": "S8",
+            "message_id": 22
+          },
+          {
+            "step_id": "S9",
+            "message_id": 102
+          }
+        ],
+        "chaser_message_ids": [
+          7
+        ]
+      },
+      {
+        "case_id": "C2",
+        "label": "Case 2 (started 03 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 9
+          },
+          {
+            "step_id": "S2",
+            "message_id": 12
+          },
+          {
+            "step_id": "S3",
+            "message_id": 17
+          },
+          {
+            "step_id": "S4",
+            "message_id": 18
+          },
+          {
+            "step_id": "S5",
+            "message_id": 26
+          },
+          {
+            "step_id": "S6",
+            "message_id": 27
+          },
+          {
+            "step_id": "S7",
+            "message_id": 36
+          },
+          {
+            "step_id": "S8",
+            "message_id": 38
+          }
+        ],
+        "chaser_message_ids": [
+          23
+        ]
+      },
+      {
+        "case_id": "C3",
+        "label": "Case 3 (started 04 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 24
+          },
+          {
+            "step_id": "S2",
+            "message_id": 29
+          },
+          {
+            "step_id": "S3",
+            "message_id": 32
+          },
+          {
+            "step_id": "S4",
+            "message_id": 33
+          },
+          {
+            "step_id": "S5",
+            "message_id": 39
+          },
+          {
+            "step_id": "S6",
+            "message_id": 40
+          },
+          {
+            "step_id": "S7",
+            "message_id": 47
+          },
+          {
+            "step_id": "S8",
+            "message_id": 50
+          }
+        ],
+        "chaser_message_ids": []
+      },
+      {
+        "case_id": "C4",
+        "label": "Case 4 (started 06 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 42
+          },
+          {
+            "step_id": "S2",
+            "message_id": 46
+          },
+          {
+            "step_id": "S3",
+            "message_id": 51
+          },
+          {
+            "step_id": "S4",
+            "message_id": 52
+          },
+          {
+            "step_id": "S5",
+            "message_id": 59
+          },
+          {
+            "step_id": "S6",
+            "message_id": 60
+          },
+          {
+            "step_id": "S7",
+            "message_id": 64
+          },
+          {
+            "step_id": "S8",
+            "message_id": 67
+          }
+        ],
+        "chaser_message_ids": [
+          57,
+          62
+        ]
+      },
+      {
+        "case_id": "C5",
+        "label": "Case 5 (started 07 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 54
+          },
+          {
+            "step_id": "S2",
+            "message_id": 66
+          },
+          {
+            "step_id": "S4",
+            "message_id": 68
+          },
+          {
+            "step_id": "S5",
+            "message_id": 75
+          },
+          {
+            "step_id": "S6",
+            "message_id": 76
+          },
+          {
+            "step_id": "S7",
+            "message_id": 88
+          },
+          {
+            "step_id": "S8",
+            "message_id": 90
+          },
+          {
+            "step_id": "S9",
+            "message_id": 504
+          }
+        ],
+        "chaser_message_ids": [
+          70
+        ]
+      },
+      {
+        "case_id": "C6",
+        "label": "Case 6 (started 09 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 71
+          },
+          {
+            "step_id": "S2",
+            "message_id": 77
+          },
+          {
+            "step_id": "S3",
+            "message_id": 80
+          },
+          {
+            "step_id": "S4",
+            "message_id": 81
+          },
+          {
+            "step_id": "S5",
+            "message_id": 92
+          },
+          {
+            "step_id": "S6",
+            "message_id": 93
+          },
+          {
+            "step_id": "S8",
+            "message_id": 111
+          },
+          {
+            "step_id": "S7",
+            "message_id": 119
+          }
+        ],
+        "chaser_message_ids": [
+          74,
+          83
+        ]
+      },
+      {
+        "case_id": "C7",
+        "label": "Case 7 (started 11 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 84
+          },
+          {
+            "step_id": "S2",
+            "message_id": 95
+          },
+          {
+            "step_id": "S4",
+            "message_id": 96
+          },
+          {
+            "step_id": "S5",
+            "message_id": 113
+          },
+          {
+            "step_id": "S6",
+            "message_id": 114
+          },
+          {
+            "step_id": "S7",
+            "message_id": 116
+          },
+          {
+            "step_id": "S8",
+            "message_id": 118
+          }
+        ],
+        "chaser_message_ids": [
+          91,
+          288
+        ]
+      },
+      {
+        "case_id": "C8",
+        "label": "Case 8 (started 12 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 98
+          },
+          {
+            "step_id": "S2",
+            "message_id": 104
+          },
+          {
+            "step_id": "S4",
+            "message_id": 105
+          },
+          {
+            "step_id": "S5",
+            "message_id": 107
+          },
+          {
+            "step_id": "S7",
+            "message_id": 108
+          },
+          {
+            "step_id": "S6",
+            "message_id": 110
+          },
+          {
+            "step_id": "S8",
+            "message_id": 111
+          }
+        ],
+        "chaser_message_ids": [
+          103
+        ]
+      },
+      {
+        "case_id": "C9",
+        "label": "Case 9 (started 13 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 121
+          },
+          {
+            "step_id": "S2",
+            "message_id": 122
+          },
+          {
+            "step_id": "S4",
+            "message_id": 131
+          },
+          {
+            "step_id": "S5",
+            "message_id": 135
+          }
+        ],
+        "chaser_message_ids": [
+          241,
+          242
+        ]
+      },
+      {
+        "case_id": "C10",
+        "label": "Case 10 (started 27 Mar)",
+        "events": [
+          {
+            "step_id": "S2",
+            "message_id": 250
+          },
+          {
+            "step_id": "S1",
+            "message_id": 251
+          },
+          {
+            "step_id": "S3",
+            "message_id": 254
+          },
+          {
+            "step_id": "S4",
+            "message_id": 258
+          },
+          {
+            "step_id": "S5",
+            "message_id": 261
+          },
+          {
+            "step_id": "S6",
+            "message_id": 262
+          },
+          {
+            "step_id": "S7",
+            "message_id": 267
+          },
+          {
+            "step_id": "S8",
+            "message_id": 270
+          },
+          {
+            "step_id": "S9",
+            "message_id": 469
+          }
+        ],
+        "chaser_message_ids": [
+          360,
+          364,
+          365,
+          366
+        ]
+      },
+      {
+        "case_id": "C11",
+        "label": "Case 11 (started 28 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 264
+          },
+          {
+            "step_id": "S2",
+            "message_id": 271
+          },
+          {
+            "step_id": "S4",
+            "message_id": 272
+          },
+          {
+            "step_id": "S5",
+            "message_id": 274
+          },
+          {
+            "step_id": "S6",
+            "message_id": 275
+          },
+          {
+            "step_id": "S7",
+            "message_id": 280
+          },
+          {
+            "step_id": "S8",
+            "message_id": 282
+          },
+          {
+            "step_id": "S9",
+            "message_id": 356
+          },
+          {
+            "step_id": "S9",
+            "message_id": 363
+          }
+        ],
+        "chaser_message_ids": [
+          277,
+          284,
+          531,
+          532
+        ]
+      },
+      {
+        "case_id": "C12",
+        "label": "Case 12 (started 31 Mar)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 283
+          },
+          {
+            "step_id": "S2",
+            "message_id": 293
+          },
+          {
+            "step_id": "S4",
+            "message_id": 294
+          },
+          {
+            "step_id": "S5",
+            "message_id": 296
+          },
+          {
+            "step_id": "S6",
+            "message_id": 297
+          },
+          {
+            "step_id": "S7",
+            "message_id": 300
+          },
+          {
+            "step_id": "S8",
+            "message_id": 303
+          },
+          {
+            "step_id": "S9",
+            "message_id": 325
+          }
+        ],
+        "chaser_message_ids": []
+      },
+      {
+        "case_id": "C13",
+        "label": "Case 13 (started 02 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 302
+          },
+          {
+            "step_id": "S2",
+            "message_id": 308
+          },
+          {
+            "step_id": "S4",
+            "message_id": 309
+          },
+          {
+            "step_id": "S5",
+            "message_id": 316
+          },
+          {
+            "step_id": "S6",
+            "message_id": 317
+          },
+          {
+            "step_id": "S9",
+            "message_id": 321
+          },
+          {
+            "step_id": "S7",
+            "message_id": 329
+          },
+          {
+            "step_id": "S8",
+            "message_id": 332
+          }
+        ],
+        "chaser_message_ids": [
+          307,
+          448,
+          449
+        ]
+      },
+      {
+        "case_id": "C14",
+        "label": "Case 14 (started 03 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 319
+          },
+          {
+            "step_id": "S2",
+            "message_id": 326
+          },
+          {
+            "step_id": "S4",
+            "message_id": 328
+          },
+          {
+            "step_id": "S5",
+            "message_id": 333
+          },
+          {
+            "step_id": "S6",
+            "message_id": 334
+          },
+          {
+            "step_id": "S7",
+            "message_id": 337
+          },
+          {
+            "step_id": "S8",
+            "message_id": 339
+          },
+          {
+            "step_id": "S9",
+            "message_id": 340
+          }
+        ],
+        "chaser_message_ids": [
+          324,
+          534,
+          535
+        ]
+      },
+      {
+        "case_id": "C15",
+        "label": "Case 15 (started 07 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 341
+          },
+          {
+            "step_id": "S2",
+            "message_id": 345
+          },
+          {
+            "step_id": "S3",
+            "message_id": 352
+          },
+          {
+            "step_id": "S4",
+            "message_id": 353
+          },
+          {
+            "step_id": "S6",
+            "message_id": 368
+          },
+          {
+            "step_id": "S7",
+            "message_id": 375
+          },
+          {
+            "step_id": "S8",
+            "message_id": 377
+          },
+          {
+            "step_id": "S9",
+            "message_id": 499
+          }
+        ],
+        "chaser_message_ids": [
+          344,
+          498
+        ]
+      },
+      {
+        "case_id": "C16",
+        "label": "Case 16 (started 08 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 347
+          },
+          {
+            "step_id": "S2",
+            "message_id": 350
+          },
+          {
+            "step_id": "S3",
+            "message_id": 358
+          }
+        ],
+        "chaser_message_ids": []
+      },
+      {
+        "case_id": "C17",
+        "label": "Case 17 (started 10 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 382
+          },
+          {
+            "step_id": "S2",
+            "message_id": 388
+          },
+          {
+            "step_id": "S3",
+            "message_id": 390
+          },
+          {
+            "step_id": "S4",
+            "message_id": 391
+          },
+          {
+            "step_id": "S5",
+            "message_id": 404
+          },
+          {
+            "step_id": "S6",
+            "message_id": 405
+          },
+          {
+            "step_id": "S7",
+            "message_id": 414
+          },
+          {
+            "step_id": "S8",
+            "message_id": 417
+          },
+          {
+            "step_id": "S9",
+            "message_id": 428
+          }
+        ],
+        "chaser_message_ids": [
+          386
+        ]
+      },
+      {
+        "case_id": "C18",
+        "label": "Case 18 (started 11 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 394
+          },
+          {
+            "step_id": "S2",
+            "message_id": 398
+          },
+          {
+            "step_id": "S4",
+            "message_id": 399
+          },
+          {
+            "step_id": "S5",
+            "message_id": 401
+          },
+          {
+            "step_id": "S6",
+            "message_id": 402
+          },
+          {
+            "step_id": "S9",
+            "message_id": 407
+          },
+          {
+            "step_id": "S7",
+            "message_id": 408
+          },
+          {
+            "step_id": "S8",
+            "message_id": 416
+          }
+        ],
+        "chaser_message_ids": []
+      },
+      {
+        "case_id": "C19",
+        "label": "Case 19 (started 13 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 410
+          },
+          {
+            "step_id": "S2",
+            "message_id": 419
+          },
+          {
+            "step_id": "S4",
+            "message_id": 420
+          },
+          {
+            "step_id": "S5",
+            "message_id": 426
+          },
+          {
+            "step_id": "S6",
+            "message_id": 427
+          },
+          {
+            "step_id": "S7",
+            "message_id": 435
+          },
+          {
+            "step_id": "S8",
+            "message_id": 439
+          },
+          {
+            "step_id": "S9",
+            "message_id": 442
+          }
+        ],
+        "chaser_message_ids": [
+          418
+        ]
+      },
+      {
+        "case_id": "C20",
+        "label": "Case 20 (started 14 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 422
+          },
+          {
+            "step_id": "S2",
+            "message_id": 431
+          },
+          {
+            "step_id": "S4",
+            "message_id": 432
+          },
+          {
+            "step_id": "S5",
+            "message_id": 440
+          },
+          {
+            "step_id": "S6",
+            "message_id": 441
+          },
+          {
+            "step_id": "S7",
+            "message_id": 492
+          },
+          {
+            "step_id": "S8",
+            "message_id": 495
+          }
+        ],
+        "chaser_message_ids": [
+          425
+        ]
+      },
+      {
+        "case_id": "C21",
+        "label": "Case 21 (started 15 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 444
+          },
+          {
+            "step_id": "S2",
+            "message_id": 450
+          },
+          {
+            "step_id": "S3",
+            "message_id": 452
+          },
+          {
+            "step_id": "S4",
+            "message_id": 453
+          },
+          {
+            "step_id": "S7",
+            "message_id": 455
+          },
+          {
+            "step_id": "S8",
+            "message_id": 457
+          },
+          {
+            "step_id": "S5",
+            "message_id": 459
+          },
+          {
+            "step_id": "S6",
+            "message_id": 460
+          },
+          {
+            "step_id": "S9",
+            "message_id": 527
+          }
+        ],
+        "chaser_message_ids": [
+          447,
+          458
+        ]
+      },
+      {
+        "case_id": "C22",
+        "label": "Case 22 (started 18 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 462
+          },
+          {
+            "step_id": "S2",
+            "message_id": 470
+          },
+          {
+            "step_id": "S3",
+            "message_id": 472
+          },
+          {
+            "step_id": "S4",
+            "message_id": 473
+          },
+          {
+            "step_id": "S5",
+            "message_id": 476
+          },
+          {
+            "step_id": "S6",
+            "message_id": 479
+          },
+          {
+            "step_id": "S9",
+            "message_id": 533
+          }
+        ],
+        "chaser_message_ids": [
+          468
+        ]
+      },
+      {
+        "case_id": "C23",
+        "label": "Case 23 (started 20 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 475
+          },
+          {
+            "step_id": "S2",
+            "message_id": 478
+          },
+          {
+            "step_id": "S2",
+            "message_id": 480
+          }
+        ],
+        "chaser_message_ids": []
+      },
+      {
+        "case_id": "C24",
+        "label": "Case 24 (started 22 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 496
+          },
+          {
+            "step_id": "S2",
+            "message_id": 501
+          },
+          {
+            "step_id": "S3",
+            "message_id": 505
+          },
+          {
+            "step_id": "S4",
+            "message_id": 511
+          },
+          {
+            "step_id": "S5",
+            "message_id": 512
+          },
+          {
+            "step_id": "S6",
+            "message_id": 513
+          },
+          {
+            "step_id": "S7",
+            "message_id": 517
+          },
+          {
+            "step_id": "S8",
+            "message_id": 520
+          }
+        ],
+        "chaser_message_ids": [
+          508
+        ]
+      },
+      {
+        "case_id": "C25",
+        "label": "Case 25 (started 23 Apr)",
+        "events": [
+          {
+            "step_id": "S1",
+            "message_id": 515
+          },
+          {
+            "step_id": "S2",
+            "message_id": 519
+          },
+          {
+            "step_id": "S4",
+            "message_id": 522
+          },
+          {
+            "step_id": "S5",
+            "message_id": 524
+          },
+          {
+            "step_id": "S6",
+            "message_id": 525
+          },
+          {
+            "step_id": "S7",
+            "message_id": 528
+          },
+          {
+            "step_id": "S8",
+            "message_id": 530
+          }
+        ],
+        "chaser_message_ids": [
+          523
+        ]
+      }
+    ]
+  },
+  "plan": {
+    "recommendations": [
+      {
+        "id": "R1",
+        "title": "AI Purchase Order Capture and Live Stock Checking",
+        "step_ids": [
+          "S1",
+          "S2"
+        ],
+        "treatment": "automate_ai",
+        "what_it_does": "Automatically extracts order details from incoming customer WhatsApp purchase orders using AI and logs them into a Google Sheet alongside live stock levels fetched directly from Tally. This eliminates the multi-hour manual back-and-forth between staff and the godown to check inventory.",
+        "how_it_works": [
+          "Set up a Make/Zapier workflow connected to your WhatsApp Business API provider (like Interakt or Wati) to catch incoming PO documents or images.",
+          "Pass the PO document to an affordable AI document parser (like OpenAI GPT-4o mini) to extract item names and quantities.",
+          "Append the extracted order data as a new row in a shared Google Sheet.",
+          "Configure a Tally connector (or scheduled script) to sync live inventory levels into the same Google Sheet."
+        ],
+        "tools": [
+          "WhatsApp Business API",
+          "Make",
+          "Google Sheets",
+          "OpenAI API",
+          "Tally Connector"
+        ],
+        "effort_removed": 0.85,
+        "setup_days": 4.0,
+        "monthly_tool_cost_inr": 1500.0,
+        "human_in_the_loop": "Office staff reviews the populated Google Sheet to ensure the AI parsed the PO correctly before proceeding.",
+        "replay_rules": [
+          {
+            "step_id": "S2",
+            "max_wait_hours": 0.1,
+            "why": "Live stock levels from Tally are visible immediately in the sheet, removing the 4.8-hour delay for manual stock verification calls."
+          }
+        ],
+        "hours_saved_per_week": 0.8,
+        "waiting_removed_per_week": 12.1,
+        "chasers_avoided_per_week": 1.4,
+        "monthly_value_inr": -648.0,
+        "setup_cost_inr": 12000.0,
+        "payback_months": null
+      },
+      {
+        "id": "R2",
+        "title": "Automated Invoice Generation and Smart Auto-Approval",
+        "step_ids": [
+          "S4",
+          "S5"
+        ],
+        "treatment": "integrate",
+        "what_it_does": "Generates draft invoices automatically in Tally based on verified order quantities and applies an auto-approval rule for trusted repeat customers below credit limits. This removes manual data entry and speeds up the approval bottleneck for the business owner.",
+        "how_it_works": [
+          "Create a webhook in Google Sheets that triggers once order quantities and dispatch amounts are finalized.",
+          "Use a Tally integration tool to automatically create a draft sales invoice in Tally.",
+          "Set up an automation rule checking customer credit limits and past payment history; trusted repeat orders under a specific threshold are auto-approved instantly.",
+          "Route only exceptions or high-value orders to the owner via WhatsApp with a 1-click approval button."
+        ],
+        "tools": [
+          "Google Sheets",
+          "Make",
+          "Tally TDL / Connector",
+          "WhatsApp Business API"
+        ],
+        "effort_removed": 0.75,
+        "setup_days": 3.0,
+        "monthly_tool_cost_inr": 1000.0,
+        "human_in_the_loop": "Business owner manually checks and approves only orders that exceed the set credit limit or come from new customers.",
+        "replay_rules": [
+          {
+            "step_id": "S5",
+            "max_wait_hours": 0.2,
+            "why": "Auto-approval rules process trusted repeat customer orders instantly, cutting down the previous 4.3-hour owner review wait."
+          }
+        ],
+        "hours_saved_per_week": 0.79,
+        "waiting_removed_per_week": 13.3,
+        "chasers_avoided_per_week": 0.9,
+        "monthly_value_inr": -227.0,
+        "setup_cost_inr": 9000.0,
+        "payback_months": null
+      },
+      {
+        "id": "R3",
+        "title": "Automated Dispatch Notification and Payment Reminders",
+        "step_ids": [
+          "S8",
+          "S9"
+        ],
+        "treatment": "automate_rules",
+        "what_it_does": "Automatically sends a WhatsApp notification with the LR attachment to the customer once dispatch is updated, and schedules automated payment reminder messages based on Tally due dates. This ensures timely customer communication without manual follow-ups.",
+        "how_it_works": [
+          "Monitor the Google Sheet for the attachment of the LR document by warehouse staff.",
+          "Trigger a Make automation to send an approved WhatsApp template message containing the LR details and tracking info to the customer.",
+          "Pull invoice due-date data from Tally daily into a tracking sheet.",
+          "Automatically trigger polite WhatsApp reminder templates when invoices approach or cross their due dates."
+        ],
+        "tools": [
+          "Google Sheets",
+          "Make",
+          "WhatsApp Business API",
+          "Tally"
+        ],
+        "effort_removed": 0.8,
+        "setup_days": 2.0,
+        "monthly_tool_cost_inr": 800.0,
+        "human_in_the_loop": "Office staff handles direct phone calls if a customer replies with payment disputes or delivery queries.",
+        "replay_rules": [
+          {
+            "step_id": "S8",
+            "max_wait_hours": 0.1,
+            "why": "Customer is notified automatically via WhatsApp the moment the LR is attached in the system, removing the manual sending delay."
+          }
+        ],
+        "hours_saved_per_week": 0.58,
+        "waiting_removed_per_week": 3.3,
+        "chasers_avoided_per_week": 0.0,
+        "monthly_value_inr": -69.0,
+        "setup_cost_inr": 6000.0,
+        "payback_months": null
+      }
+    ],
+    "settings": {
+      "staff_cost_per_hour_inr": 150.0,
+      "owner_cost_per_hour_inr": 500.0,
+      "setup_cost_per_day_inr": 3000.0,
+      "minutes_per_chaser": 5.0,
+      "weeks_per_month": 4.33
+    }
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "recommendation_id": "R2",
+      "priority_score": 1.98,
+      "critique": {
+        "id": "R2",
+        "risks": [
+          {
+            "risk": "Customers in this trade frequently negotiate rates or ask for custom discounts on the fly via chat, which static credit rules cannot handle.",
+            "severity": 5,
+            "mitigation": "Route any order where the quoted price differs from the master price list straight to the owner's WhatsApp for manual review."
+          },
+          {
+            "risk": "GST compliance rules require accurate HSN codes and party GSTIN statuses, which automated drafts from messy sheets might get wrong.",
+            "severity": 4,
+            "mitigation": "Lock invoice creation in Tally to only include verified GST-compliant master customer profiles."
+          },
+          {
+            "risk": "Tally connector API failures can create duplicate draft invoices or corrupt ledger entries if webhooks fire twice.",
+            "severity": 3,
+            "mitigation": "Implement a strict unique transaction ID check in the Make scenario before generating the draft in Tally."
+          }
+        ],
+        "who_might_resist": "The business owner might resist at first due to a deep-seated fear of an automated rule auto-approving credit for a defaulting client.",
+        "confidence": 3,
+        "verdict": "go_with_changes",
+        "change_needed": "Set the auto-approval threshold conservatively low so that only 100% trusted, zero-outstanding clients qualify, keeping the owner in control of anything ambiguous."
+      }
+    },
+    {
+      "rank": 2,
+      "recommendation_id": "R1",
+      "priority_score": 1.22,
+      "critique": {
+        "id": "R1",
+        "risks": [
+          {
+            "risk": "WhatsApp purchase orders often arrive as blurry photos of handwritten slips or voice notes, which GPT-4o mini will misread.",
+            "severity": 4,
+            "mitigation": "Strictly enforce a rule that POs must be typed text, or route unreadable images directly to staff for manual entry."
+          },
+          {
+            "risk": "Tally running on a local desktop in the office lacks a reliable static IP or constant internet, causing the live stock sync to fail frequently.",
+            "severity": 5,
+            "mitigation": "Use a lightweight local polling script that syncs inventory changes to Google Sheets every 30 minutes rather than relying on real-time webhooks."
+          },
+          {
+            "risk": "During peak festival season, high message volumes will break API rate limits or incur heavy per-message costs.",
+            "severity": 3,
+            "mitigation": "Monitor API usage closely and cap automated parsing to pre-approved regular buyers during peak weeks."
+          }
+        ],
+        "who_might_resist": "The godown keeper might resist because they fear losing their gatekeeper status and control over inventory information.",
+        "confidence": 2,
+        "verdict": "go_with_changes",
+        "change_needed": "Add a mandatory step where office staff must quickly tap a 'Confirm Stock' button before the order is pushed to the sheet, protecting against offline Tally sync errors."
+      }
+    },
+    {
+      "rank": 3,
+      "recommendation_id": "R3",
+      "priority_score": 0.9,
+      "critique": {
+        "id": "R3",
+        "risks": [
+          {
+            "risk": "Automated payment reminders sent aggressively via WhatsApp can offend long-standing wholesale clients who expect a human touch during cash crunches.",
+            "severity": 4,
+            "mitigation": "Keep reminder templates polite, and exclude specific VIP accounts from automated messaging based on a tag in Tally."
+          },
+          {
+            "risk": "Warehouse staff will forget or delay attaching the physical LR document in the Google Sheet, breaking the trigger entirely.",
+            "severity": 3,
+            "mitigation": "Make the LR attachment a mandatory field in the staff's daily checklist before they log off."
+          },
+          {
+            "risk": "Hinglish payment disputes replied to by customers will trigger the generic bot loop, frustrating the client further.",
+            "severity": 3,
+            "mitigation": "Ensure incoming replies to payment reminders instantly pause the automation and route the chat to the human office staff."
+          }
+        ],
+        "who_might_resist": "Office staff might resist because they worry automated reminders will trigger a flood of irate incoming calls they now have to handle.",
+        "confidence": 4,
+        "verdict": "go_with_changes",
+        "change_needed": "Add a 'Do Not Remind' toggle tag in Tally for sensitive or negotiating accounts to prevent automated embarrassment."
+      }
+    }
+  ],
+  "replay": {
+    "rules": {
+      "S2": 0.1,
+      "S5": 0.2,
+      "S8": 0.1
+    },
+    "cases": 25,
+    "avg_cycle_before_h": 58.5,
+    "avg_cycle_after_h": 49.4,
+    "avg_days_before": 6.8,
+    "avg_days_after": 5.7,
+    "waiting_removed_h_total": 229.0,
+    "waiting_removed_per_week": 28.6,
+    "chasers_avoided": 18,
+    "chasers_avoided_per_week": 2.2,
+    "moments": [
+      {
+        "case_label": "Case 6 (started 09 Mar)",
+        "step_name": "Update Tally and Notify Customer",
+        "before": "2026-03-13T10:49:00",
+        "after": "2026-03-10T13:59:00",
+        "hours_sooner": 26.8
+      },
+      {
+        "case_label": "Case 5 (started 07 Mar)",
+        "step_name": "Update Tally and Notify Customer",
+        "before": "2026-03-11T15:50:00",
+        "after": "2026-03-09T13:28:00",
+        "hours_sooner": 22.4
+      },
+      {
+        "case_label": "Case 7 (started 11 Mar)",
+        "step_name": "Update Tally and Notify Customer",
+        "before": "2026-03-13T17:00:00",
+        "after": "2026-03-11T17:41:00",
+        "hours_sooner": 19.3
+      },
+      {
+        "case_label": "Case 17 (started 10 Apr)",
+        "step_name": "Update Tally and Notify Customer",
+        "before": "2026-04-13T17:04:00",
+        "after": "2026-04-11T10:04:00",
+        "hours_sooner": 17.0
+      },
+      {
+        "case_label": "Case 1 (started 02 Mar)",
+        "step_name": "Update Tally and Notify Customer",
+        "before": "2026-03-04T10:21:00",
+        "after": "2026-03-02T15:09:00",
+        "hours_sooner": 15.2
+      }
+    ],
+    "milestones": [
+      {
+        "step_id": "S2",
+        "step_name": "Check Inventory Stock",
+        "cases": 24,
+        "avg_hours_before": 4.1,
+        "avg_hours_after": 0.1
+      },
+      {
+        "step_id": "S3",
+        "step_name": "Determine Partial or Full Dispatch",
+        "cases": 11,
+        "avg_hours_before": 6.7,
+        "avg_hours_after": 3.5
+      },
+      {
+        "step_id": "S4",
+        "step_name": "Create and Send Invoice for Approval",
+        "cases": 23,
+        "avg_hours_before": 7.2,
+        "avg_hours_after": 3.1
+      },
+      {
+        "step_id": "S5",
+        "step_name": "Approve Invoice",
+        "cases": 22,
+        "avg_hours_before": 12.1,
+        "avg_hours_after": 3.2
+      },
+      {
+        "step_id": "S6",
+        "step_name": "Arrange Transporter and Prepare Dispatch",
+        "cases": 22,
+        "avg_hours_before": 12.8,
+        "avg_hours_after": 3.9
+      },
+      {
+        "step_id": "S7",
+        "step_name": "Physical Dispatch and LR Generation",
+        "cases": 21,
+        "avg_hours_before": 21.2,
+        "avg_hours_after": 11.9
+      },
+      {
+        "step_id": "S8",
+        "step_name": "Update Tally and Notify Customer",
+        "cases": 21,
+        "avg_hours_before": 21.7,
+        "avg_hours_after": 11.6
+      },
+      {
+        "step_id": "S9",
+        "step_name": "Track and Receive Payments",
+        "cases": 13,
+        "avg_hours_before": 92.5,
+        "avg_hours_after": 82.8
+      }
+    ],
+    "case_results": [
+      {
+        "case_id": "C1",
+        "label": "Case 1 (started 02 Mar)",
+        "start": "2026-03-02T09:30:00",
+        "end_before": "2026-03-12T15:06:00",
+        "end_after": "2026-03-11T09:54:00",
+        "working_hours_saved": 15.2
+      },
+      {
+        "case_id": "C2",
+        "label": "Case 2 (started 03 Mar)",
+        "start": "2026-03-03T13:00:00",
+        "end_before": "2026-03-05T14:19:00",
+        "end_after": "2026-03-04T17:28:00",
+        "working_hours_saved": 6.8
+      },
+      {
+        "case_id": "C3",
+        "label": "Case 3 (started 04 Mar)",
+        "start": "2026-03-04T13:34:00",
+        "end_before": "2026-03-06T14:26:00",
+        "end_after": "2026-03-05T18:41:00",
+        "working_hours_saved": 5.8
+      },
+      {
+        "case_id": "C4",
+        "label": "Case 4 (started 06 Mar)",
+        "start": "2026-03-06T12:38:00",
+        "end_before": "2026-03-09T11:21:00",
+        "end_after": "2026-03-07T16:21:00",
+        "working_hours_saved": 5.0
+      },
+      {
+        "case_id": "C5",
+        "label": "Case 5 (started 07 Mar)",
+        "start": "2026-03-07T11:52:00",
+        "end_before": "2026-04-22T15:58:00",
+        "end_after": "2026-04-20T13:36:00",
+        "working_hours_saved": 22.4
+      },
+      {
+        "case_id": "C6",
+        "label": "Case 6 (started 09 Mar)",
+        "start": "2026-03-09T18:58:00",
+        "end_before": "2026-03-13T18:10:00",
+        "end_after": "2026-03-11T11:20:00",
+        "working_hours_saved": 26.8
+      },
+      {
+        "case_id": "C7",
+        "label": "Case 7 (started 11 Mar)",
+        "start": "2026-03-11T13:11:00",
+        "end_before": "2026-03-13T17:00:00",
+        "end_after": "2026-03-11T17:41:00",
+        "working_hours_saved": 19.3
+      },
+      {
+        "case_id": "C8",
+        "label": "Case 8 (started 12 Mar)",
+        "start": "2026-03-12T12:10:00",
+        "end_before": "2026-03-13T10:49:00",
+        "end_after": "2026-03-12T14:20:00",
+        "working_hours_saved": 6.5
+      },
+      {
+        "case_id": "C9",
+        "label": "Case 9 (started 13 Mar)",
+        "start": "2026-03-13T18:48:00",
+        "end_before": "2026-03-16T12:28:00",
+        "end_after": "2026-03-14T17:31:00",
+        "working_hours_saved": 5.0
+      },
+      {
+        "case_id": "C10",
+        "label": "Case 10 (started 27 Mar)",
+        "start": "2026-03-27T10:14:00",
+        "end_before": "2026-04-18T14:48:00",
+        "end_after": "2026-04-18T13:22:00",
+        "working_hours_saved": 1.4
+      },
+      {
+        "case_id": "C11",
+        "label": "Case 11 (started 28 Mar)",
+        "start": "2026-03-28T09:23:00",
+        "end_before": "2026-04-08T17:21:00",
+        "end_after": "2026-04-08T10:07:00",
+        "working_hours_saved": 7.2
+      },
+      {
+        "case_id": "C12",
+        "label": "Case 12 (started 31 Mar)",
+        "start": "2026-03-31T13:29:00",
+        "end_before": "2026-04-04T10:04:00",
+        "end_after": "2026-04-03T13:35:00",
+        "working_hours_saved": 6.5
+      },
+      {
+        "case_id": "C13",
+        "label": "Case 13 (started 02 Apr)",
+        "start": "2026-04-02T11:18:00",
+        "end_before": "2026-04-04T13:07:00",
+        "end_after": "2026-04-03T11:03:00",
+        "working_hours_saved": 12.1
+      },
+      {
+        "case_id": "C14",
+        "label": "Case 14 (started 03 Apr)",
+        "start": "2026-04-03T16:02:00",
+        "end_before": "2026-04-06T17:26:00",
+        "end_after": "2026-04-06T10:54:00",
+        "working_hours_saved": 6.5
+      },
+      {
+        "case_id": "C15",
+        "label": "Case 15 (started 07 Apr)",
+        "start": "2026-04-07T10:38:00",
+        "end_before": "2026-04-22T09:41:00",
+        "end_after": "2026-04-21T13:29:00",
+        "working_hours_saved": 6.2
+      },
+      {
+        "case_id": "C16",
+        "label": "Case 16 (started 08 Apr)",
+        "start": "2026-04-08T09:26:00",
+        "end_before": "2026-04-08T14:02:00",
+        "end_after": "2026-04-08T13:20:00",
+        "working_hours_saved": 0.7
+      },
+      {
+        "case_id": "C17",
+        "label": "Case 17 (started 10 Apr)",
+        "start": "2026-04-10T12:01:00",
+        "end_before": "2026-04-15T09:53:00",
+        "end_after": "2026-04-13T12:53:00",
+        "working_hours_saved": 17.0
+      },
+      {
+        "case_id": "C18",
+        "label": "Case 18 (started 11 Apr)",
+        "start": "2026-04-11T14:57:00",
+        "end_before": "2026-04-13T16:43:00",
+        "end_after": "2026-04-13T12:50:00",
+        "working_hours_saved": 3.9
+      },
+      {
+        "case_id": "C19",
+        "label": "Case 19 (started 13 Apr)",
+        "start": "2026-04-13T15:24:00",
+        "end_before": "2026-04-15T17:24:00",
+        "end_after": "2026-04-14T14:47:00",
+        "working_hours_saved": 12.6
+      },
+      {
+        "case_id": "C20",
+        "label": "Case 20 (started 14 Apr)",
+        "start": "2026-04-14T15:24:00",
+        "end_before": "2026-04-21T14:25:00",
+        "end_after": "2026-04-20T13:34:00",
+        "working_hours_saved": 10.9
+      },
+      {
+        "case_id": "C21",
+        "label": "Case 21 (started 15 Apr)",
+        "start": "2026-04-15T18:39:00",
+        "end_before": "2026-04-25T10:09:00",
+        "end_after": "2026-04-24T10:49:00",
+        "working_hours_saved": 9.3
+      },
+      {
+        "case_id": "C22",
+        "label": "Case 22 (started 18 Apr)",
+        "start": "2026-04-18T10:31:00",
+        "end_before": "2026-04-27T13:26:00",
+        "end_after": "2026-04-25T16:19:00",
+        "working_hours_saved": 7.1
+      },
+      {
+        "case_id": "C23",
+        "label": "Case 23 (started 20 Apr)",
+        "start": "2026-04-20T11:36:00",
+        "end_before": "2026-04-20T13:07:00",
+        "end_after": "2026-04-20T11:48:00",
+        "working_hours_saved": 1.3
+      },
+      {
+        "case_id": "C24",
+        "label": "Case 24 (started 22 Apr)",
+        "start": "2026-04-22T09:29:00",
+        "end_before": "2026-04-24T10:56:00",
+        "end_after": "2026-04-23T16:38:00",
+        "working_hours_saved": 4.3
+      },
+      {
+        "case_id": "C25",
+        "label": "Case 25 (started 23 Apr)",
+        "start": "2026-04-23T18:20:00",
+        "end_before": "2026-04-25T12:07:00",
+        "end_after": "2026-04-24T12:59:00",
+        "working_hours_saved": 9.1
+      }
+    ]
+  }
+}

@@ -140,7 +140,7 @@ def replay(log: EventLog, digest: ChatDigest, pmap: ProcessMap,
                   avg_hours_before=round(sum(b for b, _ in v) / len(v), 1),
                   avg_hours_after=round(sum(a for _, a in v) / len(v), 1))
         for st, v in sorted(reach.items(), key=lambda kv: order.index(kv[0]) if kv[0] in order else 99)
-        if len(v) >= 3
+        if len(v) >= min(3, max(1, len(results) // 2))
     ]
 
     return ReplayResult(
