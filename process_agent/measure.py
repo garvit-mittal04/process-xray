@@ -38,6 +38,24 @@ def _wait_before(messages, i: int) -> float:
     return working_hours_between(messages[j].timestamp, messages[i].timestamp)
 
 
+SAME_OCCURRENCE_MINUTES = 60
+
+
+def _occurrences(messages, ids: list[int]) -> list[int]:
+    """Group cited messages into occurrences. Messages from the same person
+    within an hour (e.g. "PO attached" + the PDF itself) count as one
+    occurrence. Returns the first message id of each occurrence."""
+    firsts: list[int] = []
+    for i in ids:
+        if firsts:
+            prev = messages[firsts[-1]]
+            gap = (messages[i].timestamp - prev.timestamp).total_seconds() / 60
+            if messages[i].sender == prev.sender and gap <= SAME_OCCURRENCE_MINUTES:
+                continue
+        firsts.append(i)
+    return firsts
+
+
 def measure_steps(pmap: ProcessMap, digest: ChatDigest) -> ProcessMap:
     msgs = digest.messages
     start, end = digest.date_range
@@ -48,12 +66,13 @@ def measure_steps(pmap: ProcessMap, digest: ChatDigest) -> ProcessMap:
         step.message_ids = ids
         assumed = ["minutes_per_run"]
         if ids:
-            step.frequency_per_week = round(len(ids) / weeks, 2)
+            occ = _occurrences(msgs, ids)
+            step.frequency_per_week = round(len(occ) / weeks, 2)
             if step.starts_on_external_event:
                 step.wait_before_hours = 0.0
             else:
                 step.wait_before_hours = round(
-                    statistics.median(_wait_before(msgs, i) for i in ids), 1)
+                    statistics.median(_wait_before(msgs, i) for i in occ), 1)
         else:
             step.frequency_per_week = round(1 / weeks, 2)
             step.wait_before_hours = 0.0

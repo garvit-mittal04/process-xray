@@ -3,7 +3,7 @@
 Usage:
   python3 xray.py sample_data/sharma_traders_orders.txt           # full analysis
   python3 xray.py sample_data/sharma_traders_orders.txt --parse   # parser only, no AI
-  add --us-dates if your phone shows dates as MM/DD
+Options: --us-dates (MM/DD dates), --staff-cost 150 (Rs per hour)
 """
 import argparse
 from pathlib import Path
@@ -15,37 +15,46 @@ LABELS = {
     "automate_rules": "AUTOMATE (rules)", "automate_ai": "AUTOMATE (AI)",
     "keep_human": "KEEP HUMAN",
 }
+VERDICTS = {"go": "GO", "go_with_changes": "GO WITH CHANGES", "rethink": "RETHINK"}
 
 
-def show_digest(d) -> None:
-    start, end = d.date_range
-    print(f"\n{d.source_name}: {d.total_messages} messages, "
-          f"{start:%d %b %Y} to {end:%d %b %Y}")
-    print(f"Follow-up chasers: {d.follow_up_count} | Files passed around: {d.attachment_count}")
+def show_report(r) -> None:
+    pm, an = r.process_map, r.analysis
+    print(f"\n=== {pm.process_name} ===\n{pm.summary}")
+    print("Roles: " + ", ".join(f"{p} = {role}" for p, role in pm.roles.items()))
 
+    print("\nSTEPS  (waits = measured working hours from real timestamps)")
+    for s in an.steps:
+        print(f"  {s.id}. {s.name} [{LABELS[s.treatment]}] potential {s.potential}/5 | "
+              f"{s.frequency_per_week:g}/week, ~{s.minutes_per_run:g} min, waits {s.wait_before_hours:g} h")
+    print(f"\n  Hands-on work: {an.total_hands_on_hours_per_week} h/week | "
+          f"Waiting: {an.total_waiting_hours_per_week} h/week")
+    print(f"  Insight: {an.top_insight}")
 
-def show_analysis(pmap, analysis) -> None:
-    print(f"\n=== {pmap.process_name} ===\n{pmap.summary}\n")
-    print("Roles: " + ", ".join(f"{p} = {r}" for p, r in pmap.roles.items()))
+    recs = {x.id: x for x in r.plan.recommendations}
+    print("\nRECOMMENDED AUTOMATIONS  (ranked by value, adjusted for risk)")
+    for item in r.ranking:
+        rec, c = recs[item.recommendation_id], item.critique
+        payback = f"{rec.payback_months:g} months" if rec.payback_months else "n/a"
+        print(f"\n  #{item.rank} {rec.title}  [{VERDICTS[c.verdict]}, confidence {c.confidence}/5]")
+        print(f"     Covers {', '.join(rec.step_ids)} | {LABELS[rec.treatment]}")
+        print(f"     {rec.what_it_does}")
+        print(f"     Saves {rec.hours_saved_per_week} h/week of work, {rec.waiting_removed_per_week} h/week "
+              f"of waiting | value Rs {rec.monthly_value_inr:,.0f}/month")
+        print(f"     Setup {rec.setup_days:g} days (Rs {rec.setup_cost_inr:,.0f}) | "
+              f"tools Rs {rec.monthly_tool_cost_inr:,.0f}/month | payback {payback}")
+        print(f"     Tools: {', '.join(rec.tools)}")
+        print(f"     Human stays in: {rec.human_in_the_loop}")
+        for risk in c.risks:
+            print(f"     Risk ({risk.severity}/5): {risk.risk} -> {risk.mitigation}")
+        print(f"     Who may resist: {c.who_might_resist}")
+        if c.change_needed:
+            print(f"     Change needed: {c.change_needed}")
 
-    print("\nStep-by-step (waits are measured working hours from real timestamps):")
-    for s in analysis.steps:
-        print(f"\n  {s.id}. {s.name}  [{LABELS[s.treatment]}]  potential {s.potential}/5")
-        print(f"      {s.actor} via {s.system} | {s.frequency_per_week:g}/week | "
-              f"~{s.minutes_per_run:g} min | waits {s.wait_before_hours:g} h")
-        print(f"      Why: {s.reason}")
-        if s.treatment != "keep_human":
-            print(f"      Idea: {s.idea}")
-
-    print(f"\nHands-on work: {analysis.total_hands_on_hours_per_week} h/week | "
-          f"Time spent waiting: {analysis.total_waiting_hours_per_week} h/week")
-
-    top = sorted((s for s in analysis.steps if s.treatment != "keep_human"),
-                 key=lambda s: (s.potential, s.waiting_hours_per_week), reverse=True)[:3]
-    print("\nTop 3 opportunities:")
-    for n, s in enumerate(top, 1):
-        print(f"  {n}. {s.name} ({LABELS[s.treatment]}): {s.idea}")
-    print(f"\nBiggest insight: {analysis.top_insight}")
+    s = r.plan.settings
+    print(f"\nAssumptions: staff time Rs {s.staff_cost_per_hour_inr:g}/h, builder Rs "
+          f"{s.setup_cost_per_day_inr:,.0f}/day. Minutes per step are estimates; "
+          f"frequencies and waits are measured.")
 
 
 def main() -> None:
@@ -53,31 +62,31 @@ def main() -> None:
     ap.add_argument("chat", help="Path to exported WhatsApp .txt file")
     ap.add_argument("--parse", action="store_true", help="Run the parser only (no AI)")
     ap.add_argument("--us-dates", action="store_true", help="Dates are MM/DD")
+    ap.add_argument("--staff-cost", type=float, default=150, help="Staff cost in Rs per hour")
     args = ap.parse_args()
 
-    name = Path(args.chat).stem
-    digest = build_digest(parse_whatsapp(args.chat, day_first=not args.us_dates), name)
-    show_digest(digest)
     if args.parse:
+        d = build_digest(parse_whatsapp(args.chat, day_first=not args.us_dates), Path(args.chat).stem)
+        print(f"{d.total_messages} messages | follow-up chasers: {d.follow_up_count} | "
+              f"files: {d.attachment_count}")
+        for st in d.response_stats:
+            print(f"  {st.responder}: median reply {st.median_minutes / 60:.1f} h")
         return
 
     # Imported here so --parse works without an API key
-    from process_agent.analyst import analyse
-    from process_agent.mapper import map_process
-    from process_agent.measure import measure_steps
+    from process_agent.pipeline import run
+    from process_agent.recommender import Settings
 
-    print("\n[1/2] Mapper agent is reconstructing the process...")
-    pmap = measure_steps(map_process(digest), digest)
-    print("[2/2] Analyst agent is scoring every step...")
-    analysis = analyse(pmap)
-    show_analysis(pmap, analysis)
+    report = run(args.chat, day_first=not args.us_dates,
+                 settings=Settings(staff_cost_per_hour_inr=args.staff_cost))
+    show_report(report)
 
     out = Path("outputs")
     out.mkdir(exist_ok=True)
-    (out / f"{name}_map.json").write_text(pmap.model_dump_json(indent=2), encoding="utf-8")
-    (out / f"{name}_analysis.json").write_text(analysis.model_dump_json(indent=2), encoding="utf-8")
-    (out / f"{name}_map.mmd").write_text(pmap.mermaid, encoding="utf-8")
-    print(f"\nSaved results in outputs/")
+    path = out / f"{report.chat.source_name}_report.json"
+    path.write_text(report.model_dump_json(indent=2), encoding="utf-8")
+    (out / f"{report.chat.source_name}_map.mmd").write_text(report.process_map.mermaid, encoding="utf-8")
+    print(f"\nFull report saved to {path}")
 
 
 if __name__ == "__main__":
